@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DBINVENTARIOSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ZT_CAT_ALMACENES">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="IdCEDI" Type="varchar" MaxLength="50" />
+          <Property Name="IdAlmacen" Type="varchar" MaxLength="50" />
+          <Property Name="Almacen" Type="varchar" MaxLength="50" />
+          <Property Name="FechaReg" Type="varchar" MaxLength="50" />
+          <Property Name="UsuarioReg" Type="varchar" MaxLength="50" />
+          <Property Name="FechaUltMod" Type="varchar" MaxLength="50" />
+          <Property Name="UsuarioMod" Type="varchar" MaxLength="50" />
+          <Property Name="Activo" Type="bit" />
+          <Property Name="Borrado" Type="bit" />
+        </EntityType>
+        <EntityType Name="ZT_CAT_CEDIS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="IdCEDI" Type="varchar" MaxLength="50" />
+          <Property Name="CEDI" Type="varchar" MaxLength="50" />
+          <Property Name="FechaReg" Type="varchar" MaxLength="50" />
+          <Property Name="UsuarioReg" Type="varchar" MaxLength="50" />
+          <Property Name="FechaUltMod" Type="varchar" MaxLength="50" />
+          <Property Name="UsuarioMod" Type="varchar" MaxLength="50" />
+          <Property Name="Activo" Type="bit" />
+          <Property Name="Borrado" Type="bit" />
+        </EntityType>
+        <EntityType Name="ZT_CAT_PRODUCTOS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="SKU" Type="varchar" MaxLength="50" />
+          <Property Name="CodigoBarras" Type="varchar" MaxLength="50" />
+          <Property Name="Material" Type="varchar" MaxLength="50" />
+          <Property Name="FechaReg" Type="varchar" MaxLength="50" />
+          <Property Name="UsuarioReg" Type="varchar" MaxLength="50" />
+          <Property Name="FechaUltMod" Type="varchar" MaxLength="50" />
+          <Property Name="UsuarioMod" Type="varchar" MaxLength="50" />
+          <Property Name="Activo" Type="bit" />
+          <Property Name="Borrado" Type="bit" />
+        </EntityType>
+        <EntityType Name="ZT_CAT_UNIDAD_MEDIDAS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="IdUMedida" Type="varchar" MaxLength="50" />
+          <Property Name="UMedida" Type="varchar" MaxLength="50" />
+          <Property Name="FechaReg" Type="varchar" MaxLength="50" />
+          <Property Name="UsuarioReg" Type="varchar" MaxLength="50" />
+          <Property Name="FechaUltMod" Type="varchar" MaxLength="50" />
+          <Property Name="UsuarioMod" Type="varchar" MaxLength="50" />
+          <Property Name="Activo" Type="bit" />
+          <Property Name="Borrado" Type="bit" />
+          <Property Name="CantidadPZA" Type="int" />
+        </EntityType>
+        <EntityType Name="ZT_INVENTARIOS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="IdInventario" Type="varchar" MaxLength="50" />
+          <Property Name="IdCEDI" Type="varchar" MaxLength="50" />
+          <Property Name="FechaReg" Type="varchar" MaxLength="50" />
+          <Property Name="Hora" Type="varchar" MaxLength="50" />
+          <Property Name="UsuarioReg" Type="varchar" MaxLength="50" />
+          <Property Name="FechaUltMod" Type="varchar" MaxLength="50" />
+          <Property Name="UsuarioMod" Type="varchar" MaxLength="50" />
+          <Property Name="Activo" Type="bit" />
+          <Property Name="Borrado" Type="bit" />
+        </EntityType>
+        <EntityType Name="ZT_INVENTARIOS_CONTEOS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="IdInventario" Type="varchar" MaxLength="50" />
+          <Property Name="SKU" Type="varchar" MaxLength="50" />
+          <Property Name="IdConteo" Type="int" />
+          <Property Name="IdUbicacion" Type="varchar" MaxLength="50" />
+          <Property Name="IdCEDI" Type="varchar" MaxLength="50" />
+          <Property Name="IdAlmacen" Type="varchar" MaxLength="50" />
+          <Property Name="Almacen" Type="varchar" MaxLength="50" />
+          <Property Name="Lote" Type="varchar" MaxLength="50" />
+          <Property Name="CodBarras" Type="varchar" MaxLength="50" />
+          <Property Name="Material" Type="varchar" MaxLength="50" />
+          <Property Name="CantFisica" Type="float" />
+          <Property Name="IdUMedida" Type="varchar" MaxLength="50" />
+          <Property Name="CantPZA" Type="float" />
+          <Property Name="FechaReg" Type="varchar" MaxLength="50" />
+          <Property Name="HoraReg" Type="varchar" MaxLength="50" />
+          <Property Name="FechaUltMod" Type="varchar" MaxLength="50" />
+          <Property Name="HoraUltMod" Type="varchar" MaxLength="50" />
+          <Property Name="UsuarioReg" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ZT_INVENTARIOS_DET">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="IdInventario" Type="varchar" MaxLength="50" />
+          <Property Name="SKU" Type="varchar" MaxLength="50" />
+          <Property Name="Material" Type="varchar" MaxLength="50" />
+          <Property Name="CantTeorica" Type="float" />
+          <Property Name="CantFisica" Type="float" />
+          <Property Name="Diferencia" Type="float" />
+          <Property Name="UMedida" Type="varchar" MaxLength="20" />
+          <Property Name="FechaReg" Type="varchar" MaxLength="50" />
+          <Property Name="UsuarioReg" Type="varchar" MaxLength="50" />
+          <Property Name="FechaUltMod" Type="varchar" MaxLength="50" />
+          <Property Name="UsuarioMod" Type="varchar" MaxLength="50" />
+          <Property Name="Activo" Type="bit" />
+          <Property Name="Borrado" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="DBINVENTARIOSModelStoreContainer">
+          <EntitySet Name="ZT_CAT_ALMACENES" EntityType="Self.ZT_CAT_ALMACENES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ZT_CAT_CEDIS" EntityType="Self.ZT_CAT_CEDIS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ZT_CAT_PRODUCTOS" EntityType="Self.ZT_CAT_PRODUCTOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ZT_CAT_UNIDAD_MEDIDAS" EntityType="Self.ZT_CAT_UNIDAD_MEDIDAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ZT_INVENTARIOS" EntityType="Self.ZT_INVENTARIOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ZT_INVENTARIOS_CONTEOS" EntityType="Self.ZT_INVENTARIOS_CONTEOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ZT_INVENTARIOS_DET" EntityType="Self.ZT_INVENTARIOS_DET" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBINVENTARIOSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ZT_CAT_ALMACENES">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="IdCEDI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdAlmacen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Almacen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UsuarioReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaUltMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UsuarioMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Activo" Type="Boolean" />
+          <Property Name="Borrado" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="ZT_CAT_CEDIS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="IdCEDI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CEDI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UsuarioReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaUltMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UsuarioMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Activo" Type="Boolean" />
+          <Property Name="Borrado" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="ZT_CAT_PRODUCTOS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="SKU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CodigoBarras" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Material" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UsuarioReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaUltMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UsuarioMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Activo" Type="Boolean" />
+          <Property Name="Borrado" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="ZT_CAT_UNIDAD_MEDIDAS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="IdUMedida" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UMedida" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UsuarioReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaUltMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UsuarioMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Activo" Type="Boolean" />
+          <Property Name="Borrado" Type="Boolean" />
+          <Property Name="CantidadPZA" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ZT_INVENTARIOS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="IdInventario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdCEDI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Hora" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UsuarioReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaUltMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UsuarioMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Activo" Type="Boolean" />
+          <Property Name="Borrado" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="ZT_INVENTARIOS_CONTEOS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="IdInventario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SKU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdConteo" Type="Int32" />
+          <Property Name="IdUbicacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdCEDI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdAlmacen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Almacen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Lote" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CodBarras" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Material" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CantFisica" Type="Double" />
+          <Property Name="IdUMedida" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CantPZA" Type="Double" />
+          <Property Name="FechaReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HoraReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaUltMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HoraUltMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UsuarioReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ZT_INVENTARIOS_DET">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="IdInventario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SKU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Material" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CantTeorica" Type="Double" />
+          <Property Name="CantFisica" Type="Double" />
+          <Property Name="Diferencia" Type="Double" />
+          <Property Name="UMedida" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FechaReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UsuarioReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaUltMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UsuarioMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Activo" Type="Boolean" />
+          <Property Name="Borrado" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="DBINVENTARIOSEntitiess" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ZT_CAT_ALMACENES" EntityType="Self.ZT_CAT_ALMACENES" />
+          <EntitySet Name="ZT_CAT_CEDIS" EntityType="Self.ZT_CAT_CEDIS" />
+          <EntitySet Name="ZT_CAT_PRODUCTOS" EntityType="Self.ZT_CAT_PRODUCTOS" />
+          <EntitySet Name="ZT_CAT_UNIDAD_MEDIDAS" EntityType="Self.ZT_CAT_UNIDAD_MEDIDAS" />
+          <EntitySet Name="ZT_INVENTARIOS" EntityType="Self.ZT_INVENTARIOS" />
+          <EntitySet Name="ZT_INVENTARIOS_CONTEOS" EntityType="Self.ZT_INVENTARIOS_CONTEOS" />
+          <EntitySet Name="ZT_INVENTARIOS_DET" EntityType="Self.ZT_INVENTARIOS_DET" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBINVENTARIOSModelStoreContainer" CdmEntityContainer="DBINVENTARIOSEntitiess">
+          <EntitySetMapping Name="ZT_CAT_ALMACENES">
+            <EntityTypeMapping TypeName="DBINVENTARIOSModel.ZT_CAT_ALMACENES">
+              <MappingFragment StoreEntitySet="ZT_CAT_ALMACENES">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdCEDI" ColumnName="IdCEDI" />
+                <ScalarProperty Name="IdAlmacen" ColumnName="IdAlmacen" />
+                <ScalarProperty Name="Almacen" ColumnName="Almacen" />
+                <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+                <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+                <ScalarProperty Name="FechaUltMod" ColumnName="FechaUltMod" />
+                <ScalarProperty Name="UsuarioMod" ColumnName="UsuarioMod" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Borrado" ColumnName="Borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZT_CAT_CEDIS">
+            <EntityTypeMapping TypeName="DBINVENTARIOSModel.ZT_CAT_CEDIS">
+              <MappingFragment StoreEntitySet="ZT_CAT_CEDIS">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdCEDI" ColumnName="IdCEDI" />
+                <ScalarProperty Name="CEDI" ColumnName="CEDI" />
+                <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+                <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+                <ScalarProperty Name="FechaUltMod" ColumnName="FechaUltMod" />
+                <ScalarProperty Name="UsuarioMod" ColumnName="UsuarioMod" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Borrado" ColumnName="Borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZT_CAT_PRODUCTOS">
+            <EntityTypeMapping TypeName="DBINVENTARIOSModel.ZT_CAT_PRODUCTOS">
+              <MappingFragment StoreEntitySet="ZT_CAT_PRODUCTOS">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+                <ScalarProperty Name="CodigoBarras" ColumnName="CodigoBarras" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+                <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+                <ScalarProperty Name="FechaUltMod" ColumnName="FechaUltMod" />
+                <ScalarProperty Name="UsuarioMod" ColumnName="UsuarioMod" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Borrado" ColumnName="Borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZT_CAT_UNIDAD_MEDIDAS">
+            <EntityTypeMapping TypeName="DBINVENTARIOSModel.ZT_CAT_UNIDAD_MEDIDAS">
+              <MappingFragment StoreEntitySet="ZT_CAT_UNIDAD_MEDIDAS">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdUMedida" ColumnName="IdUMedida" />
+                <ScalarProperty Name="UMedida" ColumnName="UMedida" />
+                <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+                <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+                <ScalarProperty Name="FechaUltMod" ColumnName="FechaUltMod" />
+                <ScalarProperty Name="UsuarioMod" ColumnName="UsuarioMod" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Borrado" ColumnName="Borrado" />
+                <ScalarProperty Name="CantidadPZA" ColumnName="CantidadPZA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZT_INVENTARIOS">
+            <EntityTypeMapping TypeName="DBINVENTARIOSModel.ZT_INVENTARIOS">
+              <MappingFragment StoreEntitySet="ZT_INVENTARIOS">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdInventario" ColumnName="IdInventario" />
+                <ScalarProperty Name="IdCEDI" ColumnName="IdCEDI" />
+                <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+                <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+                <ScalarProperty Name="FechaUltMod" ColumnName="FechaUltMod" />
+                <ScalarProperty Name="UsuarioMod" ColumnName="UsuarioMod" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Borrado" ColumnName="Borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZT_INVENTARIOS_CONTEOS">
+            <EntityTypeMapping TypeName="DBINVENTARIOSModel.ZT_INVENTARIOS_CONTEOS">
+              <MappingFragment StoreEntitySet="ZT_INVENTARIOS_CONTEOS">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdInventario" ColumnName="IdInventario" />
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+                <ScalarProperty Name="IdConteo" ColumnName="IdConteo" />
+                <ScalarProperty Name="IdUbicacion" ColumnName="IdUbicacion" />
+                <ScalarProperty Name="IdCEDI" ColumnName="IdCEDI" />
+                <ScalarProperty Name="IdAlmacen" ColumnName="IdAlmacen" />
+                <ScalarProperty Name="Almacen" ColumnName="Almacen" />
+                <ScalarProperty Name="Lote" ColumnName="Lote" />
+                <ScalarProperty Name="CodBarras" ColumnName="CodBarras" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="CantFisica" ColumnName="CantFisica" />
+                <ScalarProperty Name="IdUMedida" ColumnName="IdUMedida" />
+                <ScalarProperty Name="CantPZA" ColumnName="CantPZA" />
+                <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+                <ScalarProperty Name="HoraReg" ColumnName="HoraReg" />
+                <ScalarProperty Name="FechaUltMod" ColumnName="FechaUltMod" />
+                <ScalarProperty Name="HoraUltMod" ColumnName="HoraUltMod" />
+                <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZT_INVENTARIOS_DET">
+            <EntityTypeMapping TypeName="DBINVENTARIOSModel.ZT_INVENTARIOS_DET">
+              <MappingFragment StoreEntitySet="ZT_INVENTARIOS_DET">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdInventario" ColumnName="IdInventario" />
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="CantTeorica" ColumnName="CantTeorica" />
+                <ScalarProperty Name="CantFisica" ColumnName="CantFisica" />
+                <ScalarProperty Name="Diferencia" ColumnName="Diferencia" />
+                <ScalarProperty Name="UMedida" ColumnName="UMedida" />
+                <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+                <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+                <ScalarProperty Name="FechaUltMod" ColumnName="FechaUltMod" />
+                <ScalarProperty Name="UsuarioMod" ColumnName="UsuarioMod" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Borrado" ColumnName="Borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

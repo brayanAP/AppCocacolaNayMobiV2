@@ -6,5 +6,6 @@ namespace AppCocacolaNayMobiV2.Interfaces.Inventarios
 {
     interface IFicSrvConteoProductos
     {
+
     }
 }
