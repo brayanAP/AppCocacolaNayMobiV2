@@ -82,6 +82,15 @@
           "System.Xml.XDocument": "4.0.11"
         }
       },
+      "Newtonsoft.Json/11.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "sqlite-net-pcl/1.5.166-beta": {
         "type": "package",
         "dependencies": {
@@ -296,7 +305,7 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "System.Net.Http/4.1.0": {
+      "System.Net.Http/4.3.3": {
         "type": "package",
         "frameworkAssemblies": [
           "System.Net.Http"
@@ -711,6 +720,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Autofac": "4.8.0",
+          "Newtonsoft.Json": "11.0.2",
+          "System.Net.Http": "4.3.3",
           "Xamarin.Forms": "2.5.0.280555",
           "sqlite-net-pcl": "1.5.166-beta"
         },
@@ -803,6 +814,15 @@
           "System.Xml.XDocument": "4.0.11"
         }
       },
+      "Newtonsoft.Json/11.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "sqlite-net-pcl/1.5.166-beta": {
         "type": "package",
         "dependencies": {
@@ -1007,7 +1027,7 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "System.Net.Http/4.1.0": {
+      "System.Net.Http/4.3.3": {
         "type": "package",
         "frameworkAssemblies": [
           "System.Net.Http"
@@ -1372,6 +1392,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Autofac": "4.8.0",
+          "Newtonsoft.Json": "11.0.2",
+          "System.Net.Http": "4.3.3",
           "Xamarin.Forms": "2.5.0.280555",
           "sqlite-net-pcl": "1.5.166-beta"
         },
@@ -1464,6 +1486,15 @@
           "System.Xml.XDocument": "4.0.11"
         }
       },
+      "Newtonsoft.Json/11.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "sqlite-net-pcl/1.5.166-beta": {
         "type": "package",
         "dependencies": {
@@ -1668,7 +1699,7 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "System.Net.Http/4.1.0": {
+      "System.Net.Http/4.3.3": {
         "type": "package",
         "frameworkAssemblies": [
           "System.Net.Http"
@@ -2033,6 +2064,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Autofac": "4.8.0",
+          "Newtonsoft.Json": "11.0.2",
+          "System.Net.Http": "4.3.3",
           "Xamarin.Forms": "2.5.0.280555",
           "sqlite-net-pcl": "1.5.166-beta"
         },
@@ -2125,6 +2158,15 @@
           "System.Xml.XDocument": "4.0.11"
         }
       },
+      "Newtonsoft.Json/11.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "sqlite-net-pcl/1.5.166-beta": {
         "type": "package",
         "dependencies": {
@@ -2329,7 +2371,7 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "System.Net.Http/4.1.0": {
+      "System.Net.Http/4.3.3": {
         "type": "package",
         "frameworkAssemblies": [
           "System.Net.Http"
@@ -2694,6 +2736,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Autofac": "4.8.0",
+          "Newtonsoft.Json": "11.0.2",
+          "System.Net.Http": "4.3.3",
           "Xamarin.Forms": "2.5.0.280555",
           "sqlite-net-pcl": "1.5.166-beta"
         },
@@ -2778,6 +2822,34 @@
         "dotnet_library_license.txt",
         "netstandard.library.1.6.0.nupkg.sha512",
         "netstandard.library.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/11.0.2": {
+      "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+      "type": "package",
+      "path": "newtonsoft.json/11.0.2",
+      "files": [
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.11.0.2.nupkg.sha512",
+        "newtonsoft.json.nuspec"
       ]
     },
     "sqlite-net-pcl/1.5.166-beta": {
@@ -3874,10 +3946,10 @@
         "system.linq.expressions.nuspec"
       ]
     },
-    "System.Net.Http/4.1.0": {
-      "sha512": "ULq9g3SOPVuupt+Y3U+A37coXzdNisB1neFCSKzBwo182u0RDddKJF8I5+HfyXqK6OhJPgeoAwWXrbiUXuRDsg==",
+    "System.Net.Http/4.3.3": {
+      "sha512": "7rCqIbkC/P2+A00NoDH5gnvFhADmX7Dc4INvsOajbU1MVhktE9vZNrjPtF82N6Uo7obK+yzlrPUv/M+snnN/9w==",
       "type": "package",
-      "path": "system.net.http/4.1.0",
+      "path": "system.net.http/4.3.3",
       "files": [
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
@@ -3897,49 +3969,9 @@
         "ref/monotouch10/_._",
         "ref/net45/_._",
         "ref/net46/System.Net.Http.dll",
-        "ref/net46/System.Net.Http.xml",
-        "ref/net46/de/System.Net.Http.xml",
-        "ref/net46/es/System.Net.Http.xml",
-        "ref/net46/fr/System.Net.Http.xml",
-        "ref/net46/it/System.Net.Http.xml",
-        "ref/net46/ja/System.Net.Http.xml",
-        "ref/net46/ko/System.Net.Http.xml",
-        "ref/net46/ru/System.Net.Http.xml",
-        "ref/net46/zh-hans/System.Net.Http.xml",
-        "ref/net46/zh-hant/System.Net.Http.xml",
         "ref/netcore50/System.Net.Http.dll",
-        "ref/netcore50/System.Net.Http.xml",
-        "ref/netcore50/de/System.Net.Http.xml",
-        "ref/netcore50/es/System.Net.Http.xml",
-        "ref/netcore50/fr/System.Net.Http.xml",
-        "ref/netcore50/it/System.Net.Http.xml",
-        "ref/netcore50/ja/System.Net.Http.xml",
-        "ref/netcore50/ko/System.Net.Http.xml",
-        "ref/netcore50/ru/System.Net.Http.xml",
-        "ref/netcore50/zh-hans/System.Net.Http.xml",
-        "ref/netcore50/zh-hant/System.Net.Http.xml",
         "ref/netstandard1.1/System.Net.Http.dll",
-        "ref/netstandard1.1/System.Net.Http.xml",
-        "ref/netstandard1.1/de/System.Net.Http.xml",
-        "ref/netstandard1.1/es/System.Net.Http.xml",
-        "ref/netstandard1.1/fr/System.Net.Http.xml",
-        "ref/netstandard1.1/it/System.Net.Http.xml",
-        "ref/netstandard1.1/ja/System.Net.Http.xml",
-        "ref/netstandard1.1/ko/System.Net.Http.xml",
-        "ref/netstandard1.1/ru/System.Net.Http.xml",
-        "ref/netstandard1.1/zh-hans/System.Net.Http.xml",
-        "ref/netstandard1.1/zh-hant/System.Net.Http.xml",
         "ref/netstandard1.3/System.Net.Http.dll",
-        "ref/netstandard1.3/System.Net.Http.xml",
-        "ref/netstandard1.3/de/System.Net.Http.xml",
-        "ref/netstandard1.3/es/System.Net.Http.xml",
-        "ref/netstandard1.3/fr/System.Net.Http.xml",
-        "ref/netstandard1.3/it/System.Net.Http.xml",
-        "ref/netstandard1.3/ja/System.Net.Http.xml",
-        "ref/netstandard1.3/ko/System.Net.Http.xml",
-        "ref/netstandard1.3/ru/System.Net.Http.xml",
-        "ref/netstandard1.3/zh-hans/System.Net.Http.xml",
-        "ref/netstandard1.3/zh-hant/System.Net.Http.xml",
         "ref/portable-net45+win8+wpa81/_._",
         "ref/win8/_._",
         "ref/wpa81/_._",
@@ -3950,7 +3982,7 @@
         "runtimes/win/lib/net46/System.Net.Http.dll",
         "runtimes/win/lib/netcore50/System.Net.Http.dll",
         "runtimes/win/lib/netstandard1.3/System.Net.Http.dll",
-        "system.net.http.4.1.0.nupkg.sha512",
+        "system.net.http.4.3.3.nupkg.sha512",
         "system.net.http.nuspec"
       ]
     },
@@ -5655,7 +5687,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\TECNOLÓGICO\\.nuget\\packages\\": {},
+    "C:\\Users\\Brayan Arias\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {}
   },
   "project": {
@@ -5664,7 +5696,7 @@
       "projectUniqueName": "C:\\AppCocacolaNayMobiV2\\AppCocacolaNayMobiV2\\AppCocacolaNayMobiV2.iOS\\AppCocacolaNayMobiV2.iOS.csproj",
       "projectName": "AppCocacolaNayMobiV2.iOS",
       "projectPath": "C:\\AppCocacolaNayMobiV2\\AppCocacolaNayMobiV2\\AppCocacolaNayMobiV2.iOS\\AppCocacolaNayMobiV2.iOS.csproj",
-      "packagesPath": "C:\\Users\\TECNOLÓGICO\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\Brayan Arias\\.nuget\\packages\\",
       "outputPath": "C:\\AppCocacolaNayMobiV2\\AppCocacolaNayMobiV2\\AppCocacolaNayMobiV2.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
@@ -5672,7 +5704,7 @@
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\TECNOLÓGICO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Brayan Arias\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
