@@ -1,0 +1,17 @@
+C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\bin\Debug\netstandard2.0\AppCocacolaNayMobiV2.deps.json
+C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\bin\Debug\netstandard2.0\AppCocacolaNayMobiV2.dll
+C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\obj\Debug\netstandard2.0\AppCocacolaNayMobiV2.csprojResolveAssemblyReference.cache
+C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\obj\Debug\netstandard2.0\AppCocacolaNayMobiV2.csproj.CoreCompileInputs.cache
+C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\obj\Debug\netstandard2.0\AppCocacolaNayMobiV2.App.xaml.g.cs
+C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\obj\Debug\netstandard2.0\AppCocacolaNayMobiV2.AssemblyInfoInputs.cache
+C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\obj\Debug\netstandard2.0\AppCocacolaNayMobiV2.AssemblyInfo.cs
+C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\obj\Debug\netstandard2.0\AppCocacolaNayMobiV2.Views.Inventarios.FicViCpConteoInventarioItem.xaml.g.cs
+C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\obj\Debug\netstandard2.0\AppCocacolaNayMobiV2.Views.Menu.AboutPage.xaml.g.cs
+C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\obj\Debug\netstandard2.0\AppCocacolaNayMobiV2.Views.Menu.ItemDetailPage.xaml.g.cs
+C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\obj\Debug\netstandard2.0\AppCocacolaNayMobiV2.Views.Menu.ItemsPage.xaml.g.cs
+C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\obj\Debug\netstandard2.0\AppCocacolaNayMobiV2.Views.Menu.MainPage.xaml.g.cs
+C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\obj\Debug\netstandard2.0\AppCocacolaNayMobiV2.Views.Menu.NewItemPage.xaml.g.cs
+C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\bin\Debug\netstandard2.0\AppCocacolaNayMobiV2.pdb
+C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\obj\Debug\netstandard2.0\AppCocacolaNayMobiV2.dll
+C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\obj\Debug\netstandard2.0\AppCocacolaNayMobiV2.pdb
+C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\obj\Debug\netstandard2.0\AppCocacolaNayMobiV2.Views.Inventarios.FicViCpConteoInventarioList.xaml.g.cs
