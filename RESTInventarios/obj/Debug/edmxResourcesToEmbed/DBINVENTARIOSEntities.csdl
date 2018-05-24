@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBINVENTARIOSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ZT_CAT_ALMACENES">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="IdCEDI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdAlmacen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Almacen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Activo" Type="Boolean" />
+    <Property Name="Borrado" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ZT_CAT_CEDIS">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="IdCEDI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CEDI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Activo" Type="Boolean" />
+    <Property Name="Borrado" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ZT_CAT_PRODUCTOS">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="SKU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CodigoBarras" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Material" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Activo" Type="Boolean" />
+    <Property Name="Borrado" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ZT_CAT_UNIDAD_MEDIDAS">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="IdUMedida" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UMedida" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Activo" Type="Boolean" />
+    <Property Name="Borrado" Type="Boolean" />
+    <Property Name="CantidadPZA" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ZT_INVENTARIOS">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="IdInventario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdCEDI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Hora" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Activo" Type="Boolean" />
+    <Property Name="Borrado" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ZT_INVENTARIOS_CONTEOS">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="IdInventario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SKU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdConteo" Type="Int32" />
+    <Property Name="IdUbicacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdCEDI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdAlmacen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Almacen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lote" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CodBarras" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Material" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CantFisica" Type="Double" />
+    <Property Name="IdUMedida" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CantidadPZA" Type="Double" />
+    <Property Name="FechaReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HoraReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HoraUltMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ZT_INVENTARIOS_DET">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="IdInventario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SKU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Material" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CantTeorica" Type="Double" />
+    <Property Name="CantFisica" Type="Double" />
+    <Property Name="Diferencia" Type="Double" />
+    <Property Name="UMedida" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FechaReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Activo" Type="Boolean" />
+    <Property Name="Borrado" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="DBINVENTARIOSEntitiess" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ZT_CAT_ALMACENES" EntityType="Self.ZT_CAT_ALMACENES" />
+    <EntitySet Name="ZT_CAT_CEDIS" EntityType="Self.ZT_CAT_CEDIS" />
+    <EntitySet Name="ZT_CAT_PRODUCTOS" EntityType="Self.ZT_CAT_PRODUCTOS" />
+    <EntitySet Name="ZT_CAT_UNIDAD_MEDIDAS" EntityType="Self.ZT_CAT_UNIDAD_MEDIDAS" />
+    <EntitySet Name="ZT_INVENTARIOS" EntityType="Self.ZT_INVENTARIOS" />
+    <EntitySet Name="ZT_INVENTARIOS_CONTEOS" EntityType="Self.ZT_INVENTARIOS_CONTEOS" />
+    <EntitySet Name="ZT_INVENTARIOS_DET" EntityType="Self.ZT_INVENTARIOS_DET" />
+  </EntityContainer>
+</Schema>

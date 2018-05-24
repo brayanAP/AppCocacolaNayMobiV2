@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBINVENTARIOSModelStoreContainer" CdmEntityContainer="DBINVENTARIOSEntitiess">
+    <EntitySetMapping Name="ZT_CAT_ALMACENES">
+      <EntityTypeMapping TypeName="DBINVENTARIOSModel.ZT_CAT_ALMACENES">
+        <MappingFragment StoreEntitySet="ZT_CAT_ALMACENES">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdCEDI" ColumnName="IdCEDI" />
+          <ScalarProperty Name="IdAlmacen" ColumnName="IdAlmacen" />
+          <ScalarProperty Name="Almacen" ColumnName="Almacen" />
+          <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+          <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+          <ScalarProperty Name="FechaUltMod" ColumnName="FechaUltMod" />
+          <ScalarProperty Name="UsuarioMod" ColumnName="UsuarioMod" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Borrado" ColumnName="Borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZT_CAT_CEDIS">
+      <EntityTypeMapping TypeName="DBINVENTARIOSModel.ZT_CAT_CEDIS">
+        <MappingFragment StoreEntitySet="ZT_CAT_CEDIS">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdCEDI" ColumnName="IdCEDI" />
+          <ScalarProperty Name="CEDI" ColumnName="CEDI" />
+          <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+          <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+          <ScalarProperty Name="FechaUltMod" ColumnName="FechaUltMod" />
+          <ScalarProperty Name="UsuarioMod" ColumnName="UsuarioMod" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Borrado" ColumnName="Borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZT_CAT_PRODUCTOS">
+      <EntityTypeMapping TypeName="DBINVENTARIOSModel.ZT_CAT_PRODUCTOS">
+        <MappingFragment StoreEntitySet="ZT_CAT_PRODUCTOS">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+          <ScalarProperty Name="CodigoBarras" ColumnName="CodigoBarras" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+          <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+          <ScalarProperty Name="FechaUltMod" ColumnName="FechaUltMod" />
+          <ScalarProperty Name="UsuarioMod" ColumnName="UsuarioMod" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Borrado" ColumnName="Borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZT_CAT_UNIDAD_MEDIDAS">
+      <EntityTypeMapping TypeName="DBINVENTARIOSModel.ZT_CAT_UNIDAD_MEDIDAS">
+        <MappingFragment StoreEntitySet="ZT_CAT_UNIDAD_MEDIDAS">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdUMedida" ColumnName="IdUMedida" />
+          <ScalarProperty Name="UMedida" ColumnName="UMedida" />
+          <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+          <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+          <ScalarProperty Name="FechaUltMod" ColumnName="FechaUltMod" />
+          <ScalarProperty Name="UsuarioMod" ColumnName="UsuarioMod" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Borrado" ColumnName="Borrado" />
+          <ScalarProperty Name="CantidadPZA" ColumnName="CantidadPZA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZT_INVENTARIOS">
+      <EntityTypeMapping TypeName="DBINVENTARIOSModel.ZT_INVENTARIOS">
+        <MappingFragment StoreEntitySet="ZT_INVENTARIOS">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdInventario" ColumnName="IdInventario" />
+          <ScalarProperty Name="IdCEDI" ColumnName="IdCEDI" />
+          <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+          <ScalarProperty Name="Hora" ColumnName="Hora" />
+          <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+          <ScalarProperty Name="FechaUltMod" ColumnName="FechaUltMod" />
+          <ScalarProperty Name="UsuarioMod" ColumnName="UsuarioMod" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Borrado" ColumnName="Borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZT_INVENTARIOS_CONTEOS">
+      <EntityTypeMapping TypeName="DBINVENTARIOSModel.ZT_INVENTARIOS_CONTEOS">
+        <MappingFragment StoreEntitySet="ZT_INVENTARIOS_CONTEOS">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdInventario" ColumnName="IdInventario" />
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+          <ScalarProperty Name="IdConteo" ColumnName="IdConteo" />
+          <ScalarProperty Name="IdUbicacion" ColumnName="IdUbicacion" />
+          <ScalarProperty Name="IdCEDI" ColumnName="IdCEDI" />
+          <ScalarProperty Name="IdAlmacen" ColumnName="IdAlmacen" />
+          <ScalarProperty Name="Almacen" ColumnName="Almacen" />
+          <ScalarProperty Name="Lote" ColumnName="Lote" />
+          <ScalarProperty Name="CodBarras" ColumnName="CodBarras" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="CantFisica" ColumnName="CantFisica" />
+          <ScalarProperty Name="IdUMedida" ColumnName="IdUMedida" />
+          <ScalarProperty Name="CantidadPZA" ColumnName="CantidadPZA" />
+          <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+          <ScalarProperty Name="HoraReg" ColumnName="HoraReg" />
+          <ScalarProperty Name="FechaUltMod" ColumnName="FechaUltMod" />
+          <ScalarProperty Name="HoraUltMod" ColumnName="HoraUltMod" />
+          <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZT_INVENTARIOS_DET">
+      <EntityTypeMapping TypeName="DBINVENTARIOSModel.ZT_INVENTARIOS_DET">
+        <MappingFragment StoreEntitySet="ZT_INVENTARIOS_DET">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdInventario" ColumnName="IdInventario" />
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="CantTeorica" ColumnName="CantTeorica" />
+          <ScalarProperty Name="CantFisica" ColumnName="CantFisica" />
+          <ScalarProperty Name="Diferencia" ColumnName="Diferencia" />
+          <ScalarProperty Name="UMedida" ColumnName="UMedida" />
+          <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
+          <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+          <ScalarProperty Name="FechaUltMod" ColumnName="FechaUltMod" />
+          <ScalarProperty Name="UsuarioMod" ColumnName="UsuarioMod" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Borrado" ColumnName="Borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

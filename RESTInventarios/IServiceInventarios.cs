@@ -20,7 +20,7 @@ namespace RESTInventarios
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "findinv/{id}", ResponseFormat = WebMessageFormat.Json)]
-        ZT_INVENTARIOS findInv(string id);
+        ZT_INVENTARIOS findInv(int id);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "createinv",  ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
@@ -44,7 +44,7 @@ namespace RESTInventarios
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "findalm/{id}", ResponseFormat = WebMessageFormat.Json)]
-        ZT_CAT_ALMACENES findAlm(string id);
+        ZT_CAT_ALMACENES findAlm(int id);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "createalm", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
@@ -66,7 +66,7 @@ namespace RESTInventarios
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "findced/{id}", ResponseFormat = WebMessageFormat.Json)]
-        ZT_CAT_CEDIS findCed(string id);
+        ZT_CAT_CEDIS findCed(int id);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "createced", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
@@ -88,7 +88,7 @@ namespace RESTInventarios
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "findpod/{id}", ResponseFormat = WebMessageFormat.Json)]
-        ZT_CAT_PRODUCTOS findPod(string id);
+        ZT_CAT_PRODUCTOS findPod(int id);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "createpod", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
@@ -110,7 +110,7 @@ namespace RESTInventarios
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "findunm/{id}", ResponseFormat = WebMessageFormat.Json)]
-        ZT_CAT_UNIDAD_MEDIDAS findUnm(string id);
+        ZT_CAT_UNIDAD_MEDIDAS findUnm(int id);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "createunm", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
@@ -132,7 +132,7 @@ namespace RESTInventarios
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "findinc/{id}", ResponseFormat = WebMessageFormat.Json)]
-        ZT_INVENTARIOS_CONTEOS findInC(string id);
+        ZT_INVENTARIOS_CONTEOS findInC(int id);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "createinc", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
@@ -154,7 +154,7 @@ namespace RESTInventarios
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "findind/{id}", ResponseFormat = WebMessageFormat.Json)]
-        ZT_INVENTARIOS_DET findInD(string id);
+        ZT_INVENTARIOS_DET findInD(int id);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "createind", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]

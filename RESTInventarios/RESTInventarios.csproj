@@ -71,7 +71,13 @@
   <ItemGroup>
     <Content Include="DBINVENTARIOSEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBINVENTARIOSEntities.edmx</DependentUpon>
       <LastGenOutput>DBINVENTARIOSEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DBINVENTARIOSEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBINVENTARIOSEntities.edmx</DependentUpon>
+      <LastGenOutput>DBINVENTARIOSEntities.cs</LastGenOutput>
     </Content>
     <Content Include="ServiceInventarios.svc" />
     <Content Include="Web.config" />
@@ -81,6 +87,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DBINVENTARIOSEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBINVENTARIOSEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBINVENTARIOSEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DBINVENTARIOSEntities.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -92,6 +103,27 @@
     <Compile Include="ServiceInventarios.svc.cs">
       <DependentUpon>ServiceInventarios.svc</DependentUpon>
     </Compile>
+    <Compile Include="ZT_CAT_ALMACENES.cs">
+      <DependentUpon>DBINVENTARIOSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZT_CAT_CEDIS.cs">
+      <DependentUpon>DBINVENTARIOSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZT_CAT_PRODUCTOS.cs">
+      <DependentUpon>DBINVENTARIOSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZT_CAT_UNIDAD_MEDIDAS.cs">
+      <DependentUpon>DBINVENTARIOSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZT_INVENTARIOS.cs">
+      <DependentUpon>DBINVENTARIOSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZT_INVENTARIOS_CONTEOS.cs">
+      <DependentUpon>DBINVENTARIOSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZT_INVENTARIOS_DET.cs">
+      <DependentUpon>DBINVENTARIOSEntities.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -101,9 +133,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DBINVENTARIOSEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DBINVENTARIOSEntities.edmx.diagram">
+    <Content Include="DBINVENTARIOSEntities.edmx.diagram">
       <DependentUpon>DBINVENTARIOSEntities.edmx</DependentUpon>
-    </None>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

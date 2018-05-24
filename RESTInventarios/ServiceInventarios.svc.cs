@@ -579,6 +579,13 @@ namespace RESTInventarios
                     inv.Id = inventario.Id;
                     inv.IdUMedida = inventario.IdUMedida;
                     inv.UMedida = inventario.UMedida;
+                    inv.CantidadPZA = inventario.CantidadPZA;
+                    inv.FechaReg = inventario.FechaReg;
+                    inv.UsuarioReg = inventario.UsuarioReg;
+                    inv.FechaUltMod = inventario.FechaUltMod;
+                    inv.UsuarioMod = inventario.UsuarioMod;
+                    inv.Activo = inventario.Activo;
+                    inv.Borrado = inventario.Borrado;
                     dbe.SaveChanges();
                     return true;
                 }
@@ -660,87 +667,87 @@ namespace RESTInventarios
         #endregion
 
         #region SELECT ID TABLAS
-        public ZT_CAT_ALMACENES findAlm(string id)
+        public ZT_CAT_ALMACENES findAlm(int id)
         {
             using (DBINVENTARIOSEntitiess dbe = new DBINVENTARIOSEntitiess())
             {
                 var query = (from p in dbe.ZT_CAT_ALMACENES
-                             where p.IdAlmacen == id
+                             where p.Id == id
                              select p);
                 var inventario = query.First();
                 return inventario;
             }
         }//TRAER ALMACEN UNICO
 
-        public ZT_CAT_CEDIS findCed(string id)
+        public ZT_CAT_CEDIS findCed(int id)
         {
             using (DBINVENTARIOSEntitiess dbe = new DBINVENTARIOSEntitiess())
             {
                 var query = (from p in dbe.ZT_CAT_CEDIS
-                             where p.IdCEDI == id
+                             where p.Id == id
                              select p);
                 var inventario = query.First();
                 return inventario;
             }
         }//TRAER CEDI UNICO
 
-        public ZT_INVENTARIOS_CONTEOS findInC(string id)
+        public ZT_INVENTARIOS_CONTEOS findInC(int id)
         {
-            int iid = Int32.Parse(id);
+         
             using (DBINVENTARIOSEntitiess dbe = new DBINVENTARIOSEntitiess())
             {
                 var query = (from p in dbe.ZT_INVENTARIOS_CONTEOS
-                             where p.IdConteo == iid
+                             where p.Id == id
                              select p);
                 var inventario = query.First();
                 return inventario;
             }
         }//TRAER CONTEO UNICO
 
-        public ZT_INVENTARIOS_DET findInD(string id)
+        public ZT_INVENTARIOS_DET findInD(int id)
         {
-            int iid = Int32.Parse(id);
+            
             using (DBINVENTARIOSEntitiess dbe = new DBINVENTARIOSEntitiess())
             {
                 var query = (from p in dbe.ZT_INVENTARIOS_DET
-                             where p.Id == iid
+                             where p.Id == id
                              select p);
                 var inventario = query.First();
                 return inventario;
             }
         }//TRAER DETALLE UNICO
 
-        public ZT_INVENTARIOS findInv(string id)
+        public ZT_INVENTARIOS findInv(int id)
         {
             using (DBINVENTARIOSEntitiess dbe = new DBINVENTARIOSEntitiess())
             {
                 var query = (from p in dbe.ZT_INVENTARIOS
-                             where p.IdInventario == id
+                             where p.Id == id
                              select p);
                 var inventario = query.First();
                 return inventario;
             }
         }//TRAER INVENTARIO UNICO
 
-        public ZT_CAT_PRODUCTOS findPod(string id)
+        public ZT_CAT_PRODUCTOS findPod(int id)
         {
-            int iid = Int32.Parse(id);
+        
             using (DBINVENTARIOSEntitiess dbe = new DBINVENTARIOSEntitiess())
             {
                 var query = (from p in dbe.ZT_CAT_PRODUCTOS
-                             where p.Id == iid
+                             where p.Id == id
                              select p);
                 var inventario = query.First();
                 return inventario;
             }
         }//TRAER PRODUCTO UNICO
 
-        public ZT_CAT_UNIDAD_MEDIDAS findUnm(string id)
+        public ZT_CAT_UNIDAD_MEDIDAS findUnm(int id)
         {
             using (DBINVENTARIOSEntitiess dbe = new DBINVENTARIOSEntitiess())
             {
                 var query = (from p in dbe.ZT_CAT_UNIDAD_MEDIDAS
-                             where p.IdUMedida == id
+                             where p.Id == id
                              select p);
                 var inventario = query.First();
                 return inventario;

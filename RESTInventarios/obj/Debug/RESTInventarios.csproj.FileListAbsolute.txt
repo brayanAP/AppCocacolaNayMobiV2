@@ -1,0 +1,12 @@
+C:\AppCocacolaNayMobiV2\RESTInventarios\bin\RESTInventarios.dll.config
+C:\AppCocacolaNayMobiV2\RESTInventarios\bin\RESTInventarios.dll
+C:\AppCocacolaNayMobiV2\RESTInventarios\bin\RESTInventarios.pdb
+C:\AppCocacolaNayMobiV2\RESTInventarios\bin\EntityFramework.dll
+C:\AppCocacolaNayMobiV2\RESTInventarios\bin\EntityFramework.SqlServer.dll
+C:\AppCocacolaNayMobiV2\RESTInventarios\bin\EntityFramework.xml
+C:\AppCocacolaNayMobiV2\RESTInventarios\bin\EntityFramework.SqlServer.xml
+C:\AppCocacolaNayMobiV2\RESTInventarios\obj\Debug\RESTInventarios.csprojResolveAssemblyReference.cache
+C:\AppCocacolaNayMobiV2\RESTInventarios\obj\Debug\RESTInventarios.csproj.CoreCompileInputs.cache
+C:\AppCocacolaNayMobiV2\RESTInventarios\obj\Debug\RESTInventarios.csproj.CopyComplete
+C:\AppCocacolaNayMobiV2\RESTInventarios\obj\Debug\RESTInventarios.dll
+C:\AppCocacolaNayMobiV2\RESTInventarios\obj\Debug\RESTInventarios.pdb

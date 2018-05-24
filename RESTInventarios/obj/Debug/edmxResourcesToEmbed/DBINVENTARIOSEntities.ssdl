@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBINVENTARIOSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ZT_CAT_ALMACENES">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="IdCEDI" Type="varchar" MaxLength="50" />
+    <Property Name="IdAlmacen" Type="varchar" MaxLength="50" />
+    <Property Name="Almacen" Type="varchar" MaxLength="50" />
+    <Property Name="FechaReg" Type="varchar" MaxLength="50" />
+    <Property Name="UsuarioReg" Type="varchar" MaxLength="50" />
+    <Property Name="FechaUltMod" Type="varchar" MaxLength="50" />
+    <Property Name="UsuarioMod" Type="varchar" MaxLength="50" />
+    <Property Name="Activo" Type="bit" />
+    <Property Name="Borrado" Type="bit" />
+  </EntityType>
+  <EntityType Name="ZT_CAT_CEDIS">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="IdCEDI" Type="varchar" MaxLength="50" />
+    <Property Name="CEDI" Type="varchar" MaxLength="50" />
+    <Property Name="FechaReg" Type="varchar" MaxLength="50" />
+    <Property Name="UsuarioReg" Type="varchar" MaxLength="50" />
+    <Property Name="FechaUltMod" Type="varchar" MaxLength="50" />
+    <Property Name="UsuarioMod" Type="varchar" MaxLength="50" />
+    <Property Name="Activo" Type="bit" />
+    <Property Name="Borrado" Type="bit" />
+  </EntityType>
+  <EntityType Name="ZT_CAT_PRODUCTOS">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="SKU" Type="varchar" MaxLength="50" />
+    <Property Name="CodigoBarras" Type="varchar" MaxLength="50" />
+    <Property Name="Material" Type="varchar" MaxLength="50" />
+    <Property Name="FechaReg" Type="varchar" MaxLength="50" />
+    <Property Name="UsuarioReg" Type="varchar" MaxLength="50" />
+    <Property Name="FechaUltMod" Type="varchar" MaxLength="50" />
+    <Property Name="UsuarioMod" Type="varchar" MaxLength="50" />
+    <Property Name="Activo" Type="bit" />
+    <Property Name="Borrado" Type="bit" />
+  </EntityType>
+  <EntityType Name="ZT_CAT_UNIDAD_MEDIDAS">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="IdUMedida" Type="varchar" MaxLength="50" />
+    <Property Name="UMedida" Type="varchar" MaxLength="50" />
+    <Property Name="FechaReg" Type="varchar" MaxLength="50" />
+    <Property Name="UsuarioReg" Type="varchar" MaxLength="50" />
+    <Property Name="FechaUltMod" Type="varchar" MaxLength="50" />
+    <Property Name="UsuarioMod" Type="varchar" MaxLength="50" />
+    <Property Name="Activo" Type="bit" />
+    <Property Name="Borrado" Type="bit" />
+    <Property Name="CantidadPZA" Type="int" />
+  </EntityType>
+  <EntityType Name="ZT_INVENTARIOS">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="IdInventario" Type="varchar" MaxLength="50" />
+    <Property Name="IdCEDI" Type="varchar" MaxLength="50" />
+    <Property Name="FechaReg" Type="varchar" MaxLength="50" />
+    <Property Name="Hora" Type="varchar" MaxLength="50" />
+    <Property Name="UsuarioReg" Type="varchar" MaxLength="50" />
+    <Property Name="FechaUltMod" Type="varchar" MaxLength="50" />
+    <Property Name="UsuarioMod" Type="varchar" MaxLength="50" />
+    <Property Name="Activo" Type="bit" />
+    <Property Name="Borrado" Type="bit" />
+  </EntityType>
+  <EntityType Name="ZT_INVENTARIOS_CONTEOS">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="IdInventario" Type="varchar" MaxLength="50" />
+    <Property Name="SKU" Type="varchar" MaxLength="50" />
+    <Property Name="IdConteo" Type="int" />
+    <Property Name="IdUbicacion" Type="varchar" MaxLength="50" />
+    <Property Name="IdCEDI" Type="varchar" MaxLength="50" />
+    <Property Name="IdAlmacen" Type="varchar" MaxLength="50" />
+    <Property Name="Almacen" Type="varchar" MaxLength="50" />
+    <Property Name="Lote" Type="varchar" MaxLength="50" />
+    <Property Name="CodBarras" Type="varchar" MaxLength="50" />
+    <Property Name="Material" Type="varchar" MaxLength="50" />
+    <Property Name="CantFisica" Type="float" />
+    <Property Name="IdUMedida" Type="varchar" MaxLength="50" />
+    <Property Name="CantidadPZA" Type="float" />
+    <Property Name="FechaReg" Type="varchar" MaxLength="50" />
+    <Property Name="HoraReg" Type="varchar" MaxLength="50" />
+    <Property Name="FechaUltMod" Type="varchar" MaxLength="50" />
+    <Property Name="HoraUltMod" Type="varchar" MaxLength="50" />
+    <Property Name="UsuarioReg" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ZT_INVENTARIOS_DET">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="IdInventario" Type="varchar" MaxLength="50" />
+    <Property Name="SKU" Type="varchar" MaxLength="50" />
+    <Property Name="Material" Type="varchar" MaxLength="50" />
+    <Property Name="CantTeorica" Type="float" />
+    <Property Name="CantFisica" Type="float" />
+    <Property Name="Diferencia" Type="float" />
+    <Property Name="UMedida" Type="varchar" MaxLength="20" />
+    <Property Name="FechaReg" Type="varchar" MaxLength="50" />
+    <Property Name="UsuarioReg" Type="varchar" MaxLength="50" />
+    <Property Name="FechaUltMod" Type="varchar" MaxLength="50" />
+    <Property Name="UsuarioMod" Type="varchar" MaxLength="50" />
+    <Property Name="Activo" Type="bit" />
+    <Property Name="Borrado" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="DBINVENTARIOSModelStoreContainer">
+    <EntitySet Name="ZT_CAT_ALMACENES" EntityType="Self.ZT_CAT_ALMACENES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ZT_CAT_CEDIS" EntityType="Self.ZT_CAT_CEDIS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ZT_CAT_PRODUCTOS" EntityType="Self.ZT_CAT_PRODUCTOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ZT_CAT_UNIDAD_MEDIDAS" EntityType="Self.ZT_CAT_UNIDAD_MEDIDAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ZT_INVENTARIOS" EntityType="Self.ZT_INVENTARIOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ZT_INVENTARIOS_CONTEOS" EntityType="Self.ZT_INVENTARIOS_CONTEOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ZT_INVENTARIOS_DET" EntityType="Self.ZT_INVENTARIOS_DET" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
