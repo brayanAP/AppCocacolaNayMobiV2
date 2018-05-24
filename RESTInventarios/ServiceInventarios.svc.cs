@@ -27,6 +27,12 @@ namespace RESTInventarios
                         inv.IdCEDI = inventario[i].IdCEDI;
                         inv.IdAlmacen = inventario[i].IdAlmacen;
                         inv.Almacen = inventario[i].Almacen;
+                        inv.FechaReg = inventario[i].FechaReg;
+                        inv.UsuarioReg = inventario[i].UsuarioReg;
+                        inv.FechaUltMod = inventario[i].FechaUltMod;
+                        inv.UsuarioMod = inventario[i].UsuarioMod;
+                        inv.Activo = inventario[i].Activo;
+                        inv.Borrado = inventario[i].Borrado;
                         dbe.ZT_CAT_ALMACENES.Add(inv);
                         dbe.SaveChanges();
                         i++;
@@ -55,6 +61,12 @@ namespace RESTInventarios
                         inv.Id = inventario[i].Id;
                         inv.IdCEDI = inventario[i].IdCEDI;
                         inv.CEDI = inventario[i].CEDI;
+                        inv.FechaReg = inventario[i].FechaReg;
+                        inv.UsuarioReg = inventario[i].UsuarioReg;
+                        inv.FechaUltMod = inventario[i].FechaUltMod;
+                        inv.UsuarioMod = inventario[i].UsuarioMod;
+                        inv.Activo = inventario[i].Activo;
+                        inv.Borrado = inventario[i].Borrado;
                         dbe.ZT_CAT_CEDIS.Add(inv);
                         dbe.SaveChanges();
                         i++;
@@ -92,12 +104,12 @@ namespace RESTInventarios
                         inv.Material = inventario[i].Material;
                         inv.CantFisica = inventario[i].CantFisica;
                         inv.IdUMedida = inventario[i].IdUMedida;
-                        inv.CantPZA = inventario[i].CantPZA;
+                        inv.CantidadPZA= inventario[i].CantidadPZA;
                         inv.FechaReg = inventario[i].FechaReg;
                         inv.HoraReg = inventario[i].HoraReg;
                         inv.FechaUltMod = inventario[i].FechaUltMod;
                         inv.HoraUltMod = inventario[i].HoraUltMod;
-                        inv.Usuario = inventario[i].Usuario;
+                        inv.UsuarioReg = inventario[i].UsuarioReg;
                         dbe.ZT_INVENTARIOS_CONTEOS.Add(inv);
                         dbe.SaveChanges();
                         i++;
@@ -131,6 +143,12 @@ namespace RESTInventarios
                         inv.CantFisica = inventario[i].CantFisica;
                         inv.Diferencia = inventario[i].Diferencia;
                         inv.UMedida = inventario[i].UMedida;
+                        inv.FechaReg = inventario[i].FechaReg;
+                        inv.UsuarioReg = inventario[i].UsuarioReg;
+                        inv.FechaUltMod = inventario[i].FechaUltMod;
+                        inv.UsuarioMod = inventario[i].UsuarioMod;
+                        inv.Activo = inventario[i].Activo;
+                        inv.Borrado = inventario[i].Borrado;
                         dbe.ZT_INVENTARIOS_DET.Add(inv);
                         dbe.SaveChanges();
                         i++;
@@ -158,10 +176,13 @@ namespace RESTInventarios
                         inv.Id = inventario[i].Id;
                         inv.IdInventario = inventario[i].IdInventario;
                         inv.IdCEDI = inventario[i].IdCEDI;
-                        inv.CEDI = inventario[i].CEDI;
                         inv.FechaReg = inventario[i].FechaReg;
                         inv.Hora = inventario[i].Hora;
-                        inv.Usuario = inventario[i].Usuario;
+                        inv.UsuarioReg = inventario[i].UsuarioReg;
+                        inv.FechaUltMod = inventario[i].FechaUltMod;
+                        inv.UsuarioMod = inventario[i].UsuarioMod;
+                        inv.Activo = inventario[i].Activo;
+                        inv.Borrado = inventario[i].Borrado;
                         dbe.ZT_INVENTARIOS.Add(inv);
                         dbe.SaveChanges();
                         i++;
@@ -192,6 +213,12 @@ namespace RESTInventarios
                         inv.SKU = inventario[i].SKU;
                         inv.CodigoBarras = inventario[i].CodigoBarras;
                         inv.Material = inventario[i].Material;
+                        inv.FechaReg = inventario[i].FechaReg;
+                        inv.UsuarioReg = inventario[i].UsuarioReg;
+                        inv.FechaUltMod = inventario[i].FechaUltMod;
+                        inv.UsuarioMod = inventario[i].UsuarioMod;
+                        inv.Activo = inventario[i].Activo;
+                        inv.Borrado = inventario[i].Borrado;
                         dbe.ZT_CAT_PRODUCTOS.Add(inv);
                         dbe.SaveChanges();
                         i++;
@@ -218,6 +245,13 @@ namespace RESTInventarios
                         inv.Id = inventario[i].Id;
                         inv.IdUMedida = inventario[i].IdUMedida;
                         inv.UMedida = inventario[i].UMedida;
+                        inv.CantidadPZA = inventario[i].CantidadPZA;
+                        inv.FechaReg = inventario[i].FechaReg;
+                        inv.UsuarioReg = inventario[i].UsuarioReg;
+                        inv.FechaUltMod = inventario[i].FechaUltMod;
+                        inv.UsuarioMod = inventario[i].UsuarioMod;
+                        inv.Activo = inventario[i].Activo;
+                        inv.Borrado = inventario[i].Borrado;
                         dbe.ZT_CAT_UNIDAD_MEDIDAS.Add(inv);
                         dbe.SaveChanges();
                         i++;
@@ -372,6 +406,12 @@ namespace RESTInventarios
                     inv.IdCEDI = inventario.IdCEDI;
                     inv.IdAlmacen = inventario.IdAlmacen;
                     inv.Almacen = inventario.Almacen;
+                    inv.FechaReg = inventario.FechaReg;
+                    inv.UsuarioReg = inventario.UsuarioReg;
+                    inv.FechaUltMod = inventario.FechaUltMod;
+                    inv.UsuarioMod = inventario.UsuarioMod;
+                    inv.Activo = inventario.Activo;
+                    inv.Borrado = inventario.Borrado;
                     dbe.SaveChanges();
                     return true;
                 }
@@ -392,6 +432,12 @@ namespace RESTInventarios
                     inv.Id = inventario.Id;
                     inv.IdCEDI = inventario.IdCEDI;
                     inv.CEDI = inventario.CEDI;
+                    inv.FechaReg = inventario.FechaReg;
+                    inv.UsuarioReg = inventario.UsuarioReg;
+                    inv.FechaUltMod = inventario.FechaUltMod;
+                    inv.UsuarioMod = inventario.UsuarioMod;
+                    inv.Activo = inventario.Activo;
+                    inv.Borrado = inventario.Borrado;
                     dbe.SaveChanges();
                     return true;
                 }
@@ -422,12 +468,12 @@ namespace RESTInventarios
                     inv.Material = inventario.Material;
                     inv.CantFisica = inventario.CantFisica;
                     inv.IdUMedida = inventario.IdUMedida;
-                    inv.CantPZA = inventario.CantPZA;
+                    inv.CantidadPZA = inventario.CantidadPZA;
                     inv.FechaReg = inventario.FechaReg;
                     inv.HoraReg = inventario.HoraReg;
                     inv.FechaUltMod = inventario.FechaUltMod;
                     inv.HoraUltMod = inventario.HoraUltMod;
-                    inv.Usuario = inventario.Usuario;
+                    inv.UsuarioReg = inventario.UsuarioReg;
                     dbe.SaveChanges();
                     return true;
                 }
@@ -453,6 +499,12 @@ namespace RESTInventarios
                     inv.CantFisica = inventario.CantFisica;
                     inv.Diferencia = inventario.Diferencia;
                     inv.UMedida = inventario.UMedida;
+                    inv.FechaReg = inventario.FechaReg;
+                    inv.UsuarioReg = inventario.UsuarioReg;
+                    inv.FechaUltMod = inventario.FechaUltMod;
+                    inv.UsuarioMod = inventario.UsuarioMod;
+                    inv.Activo = inventario.Activo;
+                    inv.Borrado = inventario.Borrado;
                     dbe.SaveChanges();
                     return true;
                 }
@@ -473,10 +525,13 @@ namespace RESTInventarios
                     inv.Id = inventario.Id;
                     inv.IdInventario = inventario.IdInventario;
                     inv.IdCEDI = inventario.IdCEDI;
-                    inv.CEDI = inventario.CEDI;
                     inv.FechaReg = inventario.FechaReg;
                     inv.Hora = inventario.Hora;
-                    inv.Usuario = inventario.Usuario;
+                    inv.UsuarioReg = inventario.UsuarioReg;
+                    inv.FechaUltMod = inventario.FechaUltMod;
+                    inv.UsuarioMod = inventario.UsuarioMod;
+                    inv.Activo = inventario.Activo;
+                    inv.Borrado = inventario.Borrado;
                     dbe.SaveChanges();
                     return true;
                 }
@@ -498,6 +553,12 @@ namespace RESTInventarios
                     inv.SKU = inventario.SKU;
                     inv.CodigoBarras = inventario.CodigoBarras;
                     inv.Material = inventario.Material;
+                    inv.FechaReg = inventario.FechaReg;
+                    inv.UsuarioReg = inventario.UsuarioReg;
+                    inv.FechaUltMod = inventario.FechaUltMod;
+                    inv.UsuarioMod = inventario.UsuarioMod;
+                    inv.Activo = inventario.Activo;
+                    inv.Borrado = inventario.Borrado;
                     dbe.SaveChanges();
                     return true;
                 }

@@ -27,7 +27,7 @@ namespace RESTInventarios
         public string Material { get; set; }
         public Nullable<double> CantFisica { get; set; }
         public string IdUMedida { get; set; }
-        public Nullable<double> CantPZA { get; set; }
+        public Nullable<double> CantidadPZA { get; set; }
         public string FechaReg { get; set; }
         public string HoraReg { get; set; }
         public string FechaUltMod { get; set; }

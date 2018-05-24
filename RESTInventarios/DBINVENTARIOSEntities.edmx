@@ -96,7 +96,7 @@
           <Property Name="Material" Type="varchar" MaxLength="50" />
           <Property Name="CantFisica" Type="float" />
           <Property Name="IdUMedida" Type="varchar" MaxLength="50" />
-          <Property Name="CantPZA" Type="float" />
+          <Property Name="CantidadPZA" Type="float" />
           <Property Name="FechaReg" Type="varchar" MaxLength="50" />
           <Property Name="HoraReg" Type="varchar" MaxLength="50" />
           <Property Name="FechaUltMod" Type="varchar" MaxLength="50" />
@@ -227,7 +227,7 @@
           <Property Name="Material" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CantFisica" Type="Double" />
           <Property Name="IdUMedida" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CantPZA" Type="Double" />
+          <Property Name="CantidadPZA" Type="Double" />
           <Property Name="FechaReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="HoraReg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="FechaUltMod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -363,7 +363,7 @@
                 <ScalarProperty Name="Material" ColumnName="Material" />
                 <ScalarProperty Name="CantFisica" ColumnName="CantFisica" />
                 <ScalarProperty Name="IdUMedida" ColumnName="IdUMedida" />
-                <ScalarProperty Name="CantPZA" ColumnName="CantPZA" />
+                <ScalarProperty Name="CantidadPZA" ColumnName="CantidadPZA" />
                 <ScalarProperty Name="FechaReg" ColumnName="FechaReg" />
                 <ScalarProperty Name="HoraReg" ColumnName="HoraReg" />
                 <ScalarProperty Name="FechaUltMod" ColumnName="FechaUltMod" />
