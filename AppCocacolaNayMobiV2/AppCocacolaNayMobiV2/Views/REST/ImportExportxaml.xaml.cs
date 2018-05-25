@@ -257,7 +257,11 @@ namespace AppCocacolaNayMobiV2.Views.REST
 
         protected override async void OnAppearing()
         {
-
+            /*
+            FicSrvConteoInventarioList a = new FicSrvConteoInventarioList();
+            await a.FicMetRemoveAllInventario();
+            await DisplayAlert("BORRADO", "REGISTROS SQLITE BORRADOS CON EXITO", "OK");
+            */
         }
         
         public void OnToggled(object sender, ToggledEventArgs e)

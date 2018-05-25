@@ -25,35 +25,35 @@
                     <ColumnDefinition Width="50" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Label Text="zt_inventarios" HorizontalTextAlignment="End" VerticalTextAlignment="Center" TextColor="Black"
+                <Label Text="zt_inventarios" Margin="10" TextColor="Black"
                     Grid.Row="2" Grid.Column="1"  />
                 <Label Text="Seleccione sus tablas a Actualizar" Grid.Row="0" HorizontalTextAlignment="Center" VerticalTextAlignment="End" TextColor="Black"
         FontSize="25" Grid.ColumnSpan="4" />
                 
                 <Switch Grid.Row="2" Grid.Column="2" IsToggled="{Binding SwZtInv}" Toggled ="OnToggled"></Switch>
 
-                <Label Text="zt_inventarios_det" HorizontalTextAlignment="End" VerticalTextAlignment="Center" TextColor="Black"
+                <Label Text="zt_inventarios_det" Margin="10" TextColor="Black"
                     Grid.Row="3" Grid.Column="1"  />
                 
                 <Switch Grid.Row="3" Grid.Column="2" IsToggled="{Binding SwZtInvDet}" Toggled="OnToggled2"></Switch>
 
-                <Label Text="zt_inventarios_Conteos" HorizontalTextAlignment="End" VerticalTextAlignment="Center" TextColor="Black"
+                <Label Text="zt_inventarios_Conteos" Margin="10"  TextColor="Black"
                     Grid.Row="4" Grid.Column="1"  />
                 <Switch Grid.Row="4" Grid.Column="2" IsToggled="{Binding SwZtInvConteos}" Toggled="OnToggled3"></Switch>
 
-                <Label Text="zt_cat_productos" HorizontalTextAlignment="End" VerticalTextAlignment="Center" TextColor="Black"
+                <Label Text="zt_cat_productos" Margin="10"  TextColor="Black"
                     Grid.Row="5" Grid.Column="1"  />
                 <Switch Grid.Row="5" Grid.Column="2" IsToggled="{Binding SwZtCatProd}"  Toggled="OnToggled4"></Switch>
 
-                <Label Text="zt_cat_unidad_medidas" HorizontalTextAlignment="End" VerticalTextAlignment="Center" TextColor="Black"
+                <Label Text="zt_cat_unidad_medidas" Margin="10"  TextColor="Black"
                     Grid.Row="6" Grid.Column="1"  />
                 <Switch Grid.Row="6" Grid.Column="2" IsToggled="{Binding SwZtCatUnidades}"  Toggled="OnToggled5"></Switch>
 
-                <Label Text="zt_cat_cedis" HorizontalTextAlignment="End" VerticalTextAlignment="Center" TextColor="Black"
+                <Label Text="zt_cat_cedis" Margin="10" TextColor="Black"
                     Grid.Row="7" Grid.Column="1"  />
                 <Switch Grid.Row="7" Grid.Column="2" IsToggled="{Binding SwZtCatCedis}"  Toggled="OnToggled6"></Switch>
 
-                <Label Text="zt_cat_almacenes" HorizontalTextAlignment="End" VerticalTextAlignment="Center" TextColor="Black"
+                <Label Text="zt_cat_almacenes"  Margin="10" TextColor="Black"
                     Grid.Row="8" Grid.Column="1"  />
                 <Switch Grid.Row="8" Grid.Column="2" IsToggled="{Binding SwZtCatAlmanacenes}"  Toggled="OnToggled7"></Switch>
 

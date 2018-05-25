@@ -22,8 +22,8 @@ namespace AppCocacolaNayMobiV2
 
             //MainPage = new MainPage();
             //
-             MainPage = new NavigationPage(new FicViCpConteoInventarioList(null));
-          //MainPage = new ImportExportxaml();
+            //MainPage = new NavigationPage(new FicViCpConteoInventarioList(null));
+         MainPage = new ImportExportxaml();
         }
     
         protected override void OnStart()

@@ -37,19 +37,11 @@
                             Orientation="Horizontal"
                             HorizontalOptions="FillAndExpand">
                             <Label 
-                                Text="{Binding Id}"
-                                VerticalTextAlignment="Center"
-                                HorizontalOptions="StartAndExpand" />
-                            <Label 
                                 Text="{Binding IdInventario}"
                                 VerticalTextAlignment="Center"
                                 HorizontalOptions="StartAndExpand" />
                             <Label 
                                 Text="{Binding IdCEDI}"
-                                VerticalTextAlignment="Center"
-                                HorizontalOptions="StartAndExpand" />
-                            <Label 
-                                Text="{Binding CEDI}"
                                 VerticalTextAlignment="Center"
                                 HorizontalOptions="StartAndExpand" />
                             <Label 
@@ -61,7 +53,7 @@
                                 VerticalTextAlignment="Center"
                                 HorizontalOptions="StartAndExpand" />
                             <Label 
-                                Text="{Binding Usuario}"
+                                Text="{Binding UsuarioReg}"
                                 VerticalTextAlignment="Center"
                                 HorizontalOptions="StartAndExpand" />
                             <!--Image 

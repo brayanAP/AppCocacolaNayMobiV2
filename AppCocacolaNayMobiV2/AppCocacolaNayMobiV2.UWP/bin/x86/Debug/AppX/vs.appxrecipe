@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-05-25T01:46:09.377</Modified>
+      <Modified>2018-05-25T18:51:54.955</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2.UWP\bin\x86\Debug\AppCocacolaNayMobiV2.UWP.exe">
       <PackagePath>entrypoint\AppCocacolaNayMobiV2.UWP.exe</PackagePath>
-      <Modified>2018-05-25T01:46:07.514</Modified>
+      <Modified>2018-05-25T18:51:53.645</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Brayan Arias\.nuget\packages\autofac\4.8.0\lib\netstandard1.1\Autofac.dll">
       <PackagePath>Autofac.dll</PackagePath>
@@ -745,7 +745,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\bin\Debug\netstandard2.0\AppCocacolaNayMobiV2.dll">
       <PackagePath>AppCocacolaNayMobiV2.dll</PackagePath>
-      <Modified>2018-05-25T01:46:01.670</Modified>
+      <Modified>2018-05-25T18:51:47.051</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2.UWP\Assets\check.png">
       <PackagePath>Assets\check.png</PackagePath>
@@ -932,11 +932,11 @@
     <AppxPackagedFile Include="C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-05-25T01:46:08.739</Modified>
+      <Modified>2018-05-25T18:51:54.454</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2.UWP\bin\x86\Debug\Core\AppCocacolaNayMobiV2.UWP.exe">
       <PackagePath>AppCocacolaNayMobiV2.UWP.exe</PackagePath>
-      <Modified>2018-05-25T01:46:09.366</Modified>
+      <Modified>2018-05-25T18:51:54.943</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
