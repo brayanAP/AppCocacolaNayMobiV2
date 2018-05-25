@@ -17,8 +17,8 @@ namespace AppCocacolaNayMobiV2.Models.Inventarios
         public string UsuarioReg { get; set; }
         public string FechaUltMod { get; set; }
         public string UsuarioMod { get; set; }
-        public string Activo { get; set; }
-        public string Borrado { get; set; }
+        public Nullable<bool> Activo { get; set; }
+        public Nullable<bool> Borrado { get; set; }
 
         public override string ToString()
         {
@@ -44,8 +44,8 @@ namespace AppCocacolaNayMobiV2.Models.Inventarios
         public string UsuarioReg { get; set; }
         public string FechaUltMod { get; set; }
         public string UsuarioMod { get; set; }
-        public string Activo { get; set; }
-        public string Borrado { get; set; }
+        public Nullable<bool> Activo { get; set; }
+        public Nullable<bool> Borrado { get; set; }
 
         public override string ToString()
         {
@@ -71,8 +71,8 @@ namespace AppCocacolaNayMobiV2.Models.Inventarios
         public string UsuarioReg { get; set; }
         public string FechaUltMod { get; set; }
         public string UsuarioMod { get; set; }
-        public bool Activo { get; set; }
-        public bool Borrado { get; set; }
+        public Nullable<bool> Activo { get; set; }
+        public Nullable<bool> Borrado { get; set; }
 
         public override string ToString()
         {
@@ -98,8 +98,8 @@ namespace AppCocacolaNayMobiV2.Models.Inventarios
         public string UsuarioReg { get; set; }
         public string FechaUltMod { get; set; }
         public string UsuarioMod { get; set; }
-        public string Activo { get; set; }
-        public string Borrado { get; set; }
+        public Nullable<bool> Activo { get; set; }
+        public Nullable<bool> Borrado { get; set; }
 
         public override string ToString()
         {
@@ -125,8 +125,8 @@ namespace AppCocacolaNayMobiV2.Models.Inventarios
         public string UsuarioReg { get; set; }
         public string FechaUltMod { get; set; }
         public string UsuarioMod { get; set; }
-        public string Activo { get; set; }
-        public string Borrado { get; set; }
+        public Nullable<bool> Activo { get; set; }
+        public Nullable<bool> Borrado { get; set; }
 
         public override string ToString()
         {
@@ -157,8 +157,8 @@ namespace AppCocacolaNayMobiV2.Models.Inventarios
         public string UsuarioReg { get; set; }
         public string FechaUltMod { get; set; }
         public string UsuarioMod { get; set; }
-        public string Activo { get; set; }
-        public string Borrado { get; set; }
+        public Nullable<bool> Activo { get; set; }
+        public Nullable<bool> Borrado { get; set; }
 
         public override string ToString()
         {

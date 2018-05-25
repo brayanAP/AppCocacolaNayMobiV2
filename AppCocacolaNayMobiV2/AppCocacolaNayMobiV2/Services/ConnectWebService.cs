@@ -1,4 +1,6 @@
-﻿using AppCocacolaNayMobiV2.Models.Inventarios;
+﻿using AppCocacolaNayMobiV2.Interfaces.Inventarios;
+using AppCocacolaNayMobiV2.Models.Inventarios;
+using AppCocacolaNayMobiV2.Services.Inventarios;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -16,7 +18,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task<ObservableCollection<zt_inventarios>> getWebServiceInv()
         {
             /*URL A USAR*/
-            const string url = "http://localhost:57821/ServiceInventarios.svc/findallinv";
+            const string url = "http://localhost:54052/ServiceInventarios.svc/findallinv";
 
             /*PREGUNTA*/
             var content = await _Client.GetStringAsync(url);
@@ -31,7 +33,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task setWebServiceInv(List<zt_inventarios> item, bool isNewItem = false)
         {
             /*URL A USAR*/
-            const string url = "http://localhost:57821/ServiceInventarios.svc/createinv";
+            const string url = "http://localhost:54052/ServiceInventarios.svc/createinv";
             var uri = new Uri(string.Format(url, string.Empty));
 
             /*CREAMOS EN JSON*/
@@ -56,7 +58,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task<ObservableCollection<zt_cat_almacenes>> getWebServiceAlm()
         {
             /*URL A USAR*/
-            const string url = "http://localhost:57821/ServiceInventarios.svc/findallalm";
+            const string url = "http://localhost:54052/ServiceInventarios.svc/findallalm";
 
             /*PREGUNTA*/
             var content = await _Client.GetStringAsync(url);
@@ -71,7 +73,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task setWebServiceAlm(List<zt_cat_almacenes> item, bool isNewItem = false)
         {
             /*URL A USAR*/
-            const string url = "http://localhost:57821/ServiceInventarios.svc/createalm";
+            const string url = "http://localhost:54052/ServiceInventarios.svc/createalm";
             var uri = new Uri(string.Format(url, string.Empty));
 
             /*CREAMOS EN JSON*/
@@ -97,7 +99,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task<ObservableCollection<zt_cat_cedis>> getWebServiceCed()
         {
             /*URL A USAR*/
-            const string url = "http://localhost:57821/ServiceInventarios.svc/findallced";
+            const string url = "http://localhost:54052/ServiceInventarios.svc/findallced";
 
             /*PREGUNTA*/
             var content = await _Client.GetStringAsync(url);
@@ -112,7 +114,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task setWebServiceCed(List<zt_cat_cedis> item, bool isNewItem = false)
         {
             /*URL A USAR*/
-            const string url = "http://localhost:57821/ServiceInventarios.svc/createced";
+            const string url = "http://localhost:54052/ServiceInventarios.svc/createced";
             var uri = new Uri(string.Format(url, string.Empty));
 
             /*CREAMOS EN JSON*/
@@ -138,7 +140,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task<ObservableCollection<zt_cat_productos>> getWebServicePod()
         {
             /*URL A USAR*/
-            const string url = "http://localhost:57821/ServiceInventarios.svc/findallpod";
+            const string url = "http://localhost:54052/ServiceInventarios.svc/findallpod";
 
             /*PREGUNTA*/
             var content = await _Client.GetStringAsync(url);
@@ -153,7 +155,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task setWebServicePod(List<zt_cat_productos> item, bool isNewItem = false)
         {
             /*URL A USAR*/
-            const string url = "http://localhost:57821/ServiceInventarios.svc/createpod";
+            const string url = "http://localhost:54052/ServiceInventarios.svc/createpod";
             var uri = new Uri(string.Format(url, string.Empty));
 
             /*CREAMOS EN JSON*/
@@ -179,7 +181,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task<ObservableCollection<zt_cat_unidad_medidas>> getWebServiceUnm()
         {
             /*URL A USAR*/
-            const string url = "http://localhost:57821/ServiceInventarios.svc/findallunm";
+            const string url = "http://localhost:54052/ServiceInventarios.svc/findallunm";
 
             /*PREGUNTA*/
             var content = await _Client.GetStringAsync(url);
@@ -194,7 +196,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task setWebServiceUnm(List<zt_cat_unidad_medidas> item, bool isNewItem = false)
         {
             /*URL A USAR*/
-            const string url = "http://localhost:57821/ServiceInventarios.svc/createunm";
+            const string url = "http://localhost:54052/ServiceInventarios.svc/createunm";
             var uri = new Uri(string.Format(url, string.Empty));
 
             /*CREAMOS EN JSON*/
@@ -220,7 +222,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task<ObservableCollection<zt_inventarios_conteos>> getWebServiceInc()
         {
             /*URL A USAR*/
-            const string url = "http://localhost:57821/ServiceInventarios.svc/findallinc";
+            const string url = "http://localhost:54052/ServiceInventarios.svc/findallinc";
 
             /*PREGUNTA*/
             var content = await _Client.GetStringAsync(url);
@@ -235,7 +237,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task setWebServiceInc(List<zt_inventarios_conteos> item, bool isNewItem = false)
         {
             /*URL A USAR*/
-            const string url = "http://localhost:57821/ServiceInventarios.svc/createinc";
+            const string url = "http://localhost:54052/ServiceInventarios.svc/createinc";
             var uri = new Uri(string.Format(url, string.Empty));
 
             /*CREAMOS EN JSON*/
@@ -261,7 +263,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task<ObservableCollection<zt_inventarios_det>> getWebServiceInd()
         {
             /*URL A USAR*/
-            const string url = "http://localhost:57821/ServiceInventarios.svc/findallind";
+            const string url = "http://localhost:54052/ServiceInventarios.svc/findallind";
 
             /*PREGUNTA*/
             var content = await _Client.GetStringAsync(url);
@@ -276,7 +278,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task setWebServiceInd(List<zt_inventarios_det> item, bool isNewItem = false)
         {
             /*URL A USAR*/
-            const string url = "http://localhost:57821/ServiceInventarios.svc/createind";
+            const string url = "http://localhost:54052/ServiceInventarios.svc/createind";
             var uri = new Uri(string.Format(url, string.Empty));
 
             /*CREAMOS EN JSON*/
@@ -298,5 +300,235 @@ namespace AppCocacolaNayMobiV2.Services
             }
 
         }//POST WEB SERVICE zt_inventarios_det
+    }
+
+    public class ConnectXamarin
+    {
+        FicSrvConteoInventarioList sqlite = new FicSrvConteoInventarioList();
+
+        public async Task<IList<zt_inventarios>> getXamarinInv()
+        {
+            return await sqlite.FicMetGetListInventarios();
+        }//GET XAMARIN zt_inventarios
+
+        public async Task setXamarinInv(List<zt_inventarios> item)
+        {
+            var lista = await this.getXamarinInv();
+            bool exists = false;
+
+            for(int i = 0; i < item.Count; i++)
+            {
+                for(int dx = 0; dx < lista.Count; dx++)
+                {
+                    if (item[i].IdInventario == lista[dx].IdInventario)
+                    {
+                        exists = true;
+                    }
+                }//FOR SECUNDARIO BUSCAR YA INSERTADO
+
+                if (!(exists))
+                {
+                    zt_inventarios inv = item[i];
+                    await sqlite.FicMetInsertNewInventario(inv);
+                }
+                else
+                {
+                    exists = false;
+                }
+            }//FOR PRINCIPAL
+           
+        }//SET XAMARIN zt_inventarios
+
+        public async Task<IList<zt_cat_almacenes>> getXamarinAlm()
+        {
+            return await sqlite.FicMetGetListAlmacenes();
+        }//GET XAMARIN zt_cat_almacenes
+
+        public async Task setXamarinAlm(List<zt_cat_almacenes> item)
+        {
+            var lista = await this.getXamarinAlm();
+            bool exists = false;
+
+            for (int i = 0; i < item.Count; i++)
+            {
+                for (int dx = 0; dx < lista.Count; dx++)
+                {
+                    if (item[i].IdAlmacen == lista[dx].IdAlmacen)
+                    {
+                        exists = true;
+                    }
+                }//FOR SECUNDARIO BUSCAR YA INSERTADO
+
+                if (!(exists))
+                {
+                    zt_cat_almacenes inv = item[i];
+                    await sqlite.FicMetInsertNewAlmacenes(inv);
+                }
+                else
+                {
+                    exists = false;
+                }
+            }//FOR PRINCIPAL
+        }//SET XAMARIN zt_cat_almacenes
+
+        public async Task<IList<zt_cat_cedis>> getXamarinCed()
+        {
+            return await sqlite.FicMetGetListCedis();
+        }//GET XAMARIN zt_cat_cedis
+
+        public async Task setXamarinCed(List<zt_cat_cedis> item)
+        {
+            var lista = await this.getXamarinCed();
+            bool exists = false;
+
+            for (int i = 0; i < item.Count; i++)
+            {
+                for (int dx = 0; dx < lista.Count; dx++)
+                {
+                    if (item[i].IdCEDI == lista[dx].IdCEDI)
+                    {
+                        exists = true;
+                    }
+                }//FOR SECUNDARIO BUSCAR YA INSERTADO
+
+                if (!(exists))
+                {
+                    zt_cat_cedis inv = item[i];
+                    await sqlite.FicMetInsertNewCedis(inv);
+                }
+                else
+                {
+                    exists = false;
+                }
+            }//FOR PRINCIPAL
+        }//SET XAMARIN zt_cat_cedis
+
+        public async Task<IList<zt_cat_productos>> getXamarinPod()
+        {
+            return await sqlite.FicMetGetListProductos();
+        }//GET XAMARIN zt_cat_productos
+
+        public async Task setXamarinPod(List<zt_cat_productos> item)
+        {
+            var lista = await this.getXamarinPod();
+            bool exists = false;
+
+            for (int i = 0; i < item.Count; i++)
+            {
+                for (int dx = 0; dx < lista.Count; dx++)
+                {
+                    if (item[i].SKU == lista[dx].SKU)
+                    {
+                        exists = true;
+                    }
+                }//FOR SECUNDARIO BUSCAR YA INSERTADO
+
+                if (!(exists))
+                {
+                    zt_cat_productos inv = item[i];
+                    await sqlite.FicMetInsertNewProductos(inv);
+                }
+                else
+                {
+                    exists = false;
+                }
+            }//FOR PRINCIPAL
+        }//SET XAMARIN zt_cat_productos
+
+        public async Task<IList<zt_cat_unidad_medidas>> getXamarinUnm()
+        {
+            return await sqlite.FicMetGetListUnidadMedidas();
+        }//GET XAMARIN zt_cat_unidad_medidas
+
+        public async Task setXamarinUnm(List<zt_cat_unidad_medidas> item)
+        {
+            var lista = await this.getXamarinUnm();
+            bool exists = false;
+
+            for (int i = 0; i < item.Count; i++)
+            {
+                for (int dx = 0; dx < lista.Count; dx++)
+                {
+                    if (item[i].IdUMedida == lista[dx].IdUMedida)
+                    {
+                        exists = true;
+                    }
+                }//FOR SECUNDARIO BUSCAR YA INSERTADO
+
+                if (!(exists))
+                {
+                    zt_cat_unidad_medidas inv = item[i];
+                    await sqlite.FicMetInsertNewUnidadMedidas(inv);
+                }
+                else
+                {
+                    exists = false;
+                }
+            }//FOR PRINCIPAL
+        }//SET XAMARIN zt_cat_unidad_medidas
+
+        public async Task<IList<zt_inventarios_conteos>> getXamarinInc()
+        {
+            return await sqlite.FicMetGetListInventariosConteos();
+        }//GET XAMARIN zt_inventarios_conteos
+
+        public async Task setXamarinInc(List<zt_inventarios_conteos> item)
+        {
+            var lista = await this.getXamarinInc();
+            bool exists = false;
+
+            for (int i = 0; i < item.Count; i++)
+            {
+                for (int dx = 0; dx < lista.Count; dx++)
+                {
+                    if (item[i].IdConteo == lista[dx].IdConteo)
+                    {
+                        exists = true;
+                    }
+                }//FOR SECUNDARIO BUSCAR YA INSERTADO
+
+                if (!(exists))
+                {
+                    zt_inventarios_conteos inv = item[i];
+                    await sqlite.FicMetInsertNewInventarioConteos(inv);
+                }
+                else
+                {
+                    exists = false;
+                }
+            }//FOR PRINCIPAL
+        }//SET XAMARIN zt_inventarios_conteos
+
+        public async Task<IList<zt_inventarios_det>> getXamarinInd()
+        {
+            return await sqlite.FicMetGetListInventariosDet();
+        }//GET XAMARIN zt_inventarios_det
+
+        public async Task setXamarinInd(List<zt_inventarios_det> item)
+        {
+            var lista = await this.getXamarinInd();
+            bool exists = false;
+
+            for (int i = 0; i < item.Count; i++)
+            {
+                for (int dx = 0; dx < lista.Count; dx++)
+                {
+                    if (item[i].SKU == lista[dx].SKU)
+                    {
+                        exists = true;
+                    }
+                }//FOR SECUNDARIO BUSCAR YA INSERTADO
+
+                if (!(exists))
+                {
+                    zt_inventarios_det inv = item[i];
+                    await sqlite.FicMetInsertNewInventarioDet(inv);
+                }
+                else
+                {
+                    exists = false;
+                }
+            }//FOR PRINCIPAL
+        }//SET XAMARIN SERVICE zt_inventarios_det
     }
 }

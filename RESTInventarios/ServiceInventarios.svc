@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="RESTWSINVENTARIOS.ServiceInventarios" CodeBehind="ServiceInventarios.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="RESTInventarios.ServiceInventarios" CodeBehind="ServiceInventarios.svc.cs" %>

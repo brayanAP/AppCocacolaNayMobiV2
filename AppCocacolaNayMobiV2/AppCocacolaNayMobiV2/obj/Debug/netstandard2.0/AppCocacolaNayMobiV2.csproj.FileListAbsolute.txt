@@ -1,6 +1,5 @@
 C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\bin\Debug\netstandard2.0\AppCocacolaNayMobiV2.deps.json
 C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\bin\Debug\netstandard2.0\AppCocacolaNayMobiV2.dll
-C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\obj\Debug\netstandard2.0\AppCocacolaNayMobiV2.csprojResolveAssemblyReference.cache
 C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\obj\Debug\netstandard2.0\AppCocacolaNayMobiV2.csproj.CoreCompileInputs.cache
 C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\obj\Debug\netstandard2.0\AppCocacolaNayMobiV2.App.xaml.g.cs
 C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\obj\Debug\netstandard2.0\AppCocacolaNayMobiV2.AssemblyInfoInputs.cache
@@ -15,3 +14,5 @@ C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\bin\Debug\nets
 C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\obj\Debug\netstandard2.0\AppCocacolaNayMobiV2.dll
 C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\obj\Debug\netstandard2.0\AppCocacolaNayMobiV2.pdb
 C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\obj\Debug\netstandard2.0\AppCocacolaNayMobiV2.Views.Inventarios.FicViCpConteoInventarioList.xaml.g.cs
+C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\obj\Debug\netstandard2.0\AppCocacolaNayMobiV2.Views.REST.ImportExportxaml.xaml.g.cs
+C:\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\AppCocacolaNayMobiV2\obj\Debug\netstandard2.0\AppCocacolaNayMobiV2.csprojResolveAssemblyReference.cache

@@ -1,5 +1,6 @@
 ﻿using AppCocacolaNayMobiV2.ViewModels.Base;
 using AppCocacolaNayMobiV2.Views.Inventarios;
+using AppCocacolaNayMobiV2.Views.REST;
 //using AppCocacolaNayMobiV2.Views.Menu;
 using Xamarin.Forms;
 
@@ -20,10 +21,11 @@ namespace AppCocacolaNayMobiV2
             InitializeComponent();
 
             //MainPage = new MainPage();
-
-            MainPage = new NavigationPage(new FicViCpConteoInventarioList(null));
+            //
+             MainPage = new NavigationPage(new FicViCpConteoInventarioList(null));
+          //MainPage = new ImportExportxaml();
         }
-
+    
         protected override void OnStart()
         {
             // Handle when your app starts

@@ -31,16 +31,6 @@ namespace AppCocacolaNayMobiV2.Services.Inventarios
         //FIC: Metodo para crear las tablas si no existen localmente en el dispositivo
         public async void FicLoMetCreateDataBaseAsync()
         {
-            //var config = DependencyService.Get<IConfigSqlite>();
-            //ficSQLiteConnection = new SQLiteConnection(config.Plataforma, config.DirectorioDB);
-            //ficSQLiteConnection.CreateTable<zt_cat_cedis>();
-            //ficSQLiteConnection.CreateTable<zt_cat_almacenes>();
-            //ficSQLiteConnection.CreateTable<zt_cat_unidad_medidas>();
-            //ficSQLiteConnection.CreateTable<zt_cat_productos>();
-            //ficSQLiteConnection.CreateTable<zt_inventarios>();
-            //ficSQLiteConnection.CreateTable<zt_inventarios_det>();
-            //ficSQLiteConnection.CreateTable<zt_inventarios_conteos>();
-
             using (await ficMutex.LockAsync().ConfigureAwait(false))
             {
                 await ficSQLiteConnection.CreateTableAsync<zt_cat_cedis>(CreateFlags.None).ConfigureAwait(false);
@@ -53,14 +43,38 @@ namespace AppCocacolaNayMobiV2.Services.Inventarios
             }
         }
 
-        #region zt_inventarios
-        //FIC: esta funcion se agrega y se desarrolla aqui porque esta definida en interfaces
+        public async Task<IList<zt_cat_almacenes>> FicMetGetListAlmacenes()
+        {
+            var items = new List<zt_cat_almacenes>();
+            using (await ficMutex.LockAsync().ConfigureAwait(false))
+            {
+                items = await ficSQLiteConnection.Table<zt_cat_almacenes>().ToListAsync().ConfigureAwait(false);
+            }
+
+            return items;
+        }
+        public async Task FicMetRemoveAllAlmacenes()
+        {
+            await ficSQLiteConnection.DeleteAllAsync<zt_cat_almacenes>();
+        }
+
+        public async Task<IList<zt_cat_cedis>> FicMetGetListCedis()
+        {
+            var items = new List<zt_cat_cedis>();
+            using (await ficMutex.LockAsync().ConfigureAwait(false))
+            {
+                items = await ficSQLiteConnection.Table<zt_cat_cedis>().ToListAsync().ConfigureAwait(false);
+            }
+
+            return items;
+        }
+        public async Task FicMetRemoveAllCedis()
+        {
+            await ficSQLiteConnection.DeleteAllAsync<zt_cat_cedis>();
+        }
+
         public async Task<IList<zt_inventarios>> FicMetGetListInventarios()
         {
-            //string ficStrFecha = ficPaFecha.Date.ToString("dd/MM/yyyy");
-            //return ficSQLiteConexion.Table<zt_inventarios>().Where(x => x.IdCEDI == ficPaIdCedi && x.FechaReg == ficStrFecha).ToList();
-            //return ficSQLiteConnection.Table<zt_inventarios>().ToListAsync();
-
             var items = new List<zt_inventarios>();
             using (await ficMutex.LockAsync().ConfigureAwait(false))
             {
@@ -69,9 +83,99 @@ namespace AppCocacolaNayMobiV2.Services.Inventarios
 
             return items;
         }
+        
+        public async Task<IList<zt_inventarios_conteos>> FicMetGetListInventariosConteos()
+        {
+            var items = new List<zt_inventarios_conteos>();
+            using (await ficMutex.LockAsync().ConfigureAwait(false))
+            {
+                items = await ficSQLiteConnection.Table<zt_inventarios_conteos>().ToListAsync().ConfigureAwait(false);
+            }
 
+            return items;
+        }
 
-        //FIC: Insertar el Inventario en la tabla.
+        public async Task<IList<zt_inventarios_det>> FicMetGetListInventariosDet()
+        {
+            var items = new List<zt_inventarios_det>();
+            using (await ficMutex.LockAsync().ConfigureAwait(false))
+            {
+                items = await ficSQLiteConnection.Table<zt_inventarios_det>().ToListAsync().ConfigureAwait(false);
+            }
+
+            return items;
+        }
+
+        public async Task<IList<zt_cat_productos>> FicMetGetListProductos()
+        {
+            var items = new List<zt_cat_productos>();
+            using (await ficMutex.LockAsync().ConfigureAwait(false))
+            {
+                items = await ficSQLiteConnection.Table<zt_cat_productos>().ToListAsync().ConfigureAwait(false);
+            }
+
+            return items;
+        }
+        public async Task FicMetRemoveAllProductos()
+        {
+            await ficSQLiteConnection.DeleteAllAsync<zt_cat_productos>();
+        }
+
+        public async Task<IList<zt_cat_unidad_medidas>> FicMetGetListUnidadMedidas()
+        {
+            var items = new List<zt_cat_unidad_medidas>();
+            using (await ficMutex.LockAsync().ConfigureAwait(false))
+            {
+                items = await ficSQLiteConnection.Table<zt_cat_unidad_medidas>().ToListAsync().ConfigureAwait(false);
+            }
+
+            return items;
+        }
+        public async Task FicMetRemoveAllUnidadMedidas()
+        {
+            await ficSQLiteConnection.DeleteAllAsync<zt_cat_unidad_medidas>();
+        }
+
+        public async Task FicMetInsertNewAlmacenes(zt_cat_almacenes FicPaZt_inventarios_Item)
+        {
+            using (await ficMutex.LockAsync().ConfigureAwait(false))
+            {
+                var FicExistingInventarioItem = await ficSQLiteConnection.Table<zt_cat_almacenes>()
+                        .Where(x => x.Id == FicPaZt_inventarios_Item.Id)
+                        .FirstOrDefaultAsync();
+
+                if (FicExistingInventarioItem == null)
+                {
+                    await ficSQLiteConnection.InsertAsync(FicPaZt_inventarios_Item).ConfigureAwait(false);
+                }
+                else
+                {
+                    FicPaZt_inventarios_Item.Id = FicExistingInventarioItem.Id;
+                    await ficSQLiteConnection.UpdateAsync(FicPaZt_inventarios_Item).ConfigureAwait(false);
+                }
+            }
+        }
+
+        public async Task FicMetInsertNewCedis(zt_cat_cedis FicPaZt_inventarios_Item)
+        {
+            using (await ficMutex.LockAsync().ConfigureAwait(false))
+            {
+                var FicExistingInventarioItem = await ficSQLiteConnection.Table<zt_cat_cedis>()
+                        .Where(x => x.Id == FicPaZt_inventarios_Item.Id)
+                        .FirstOrDefaultAsync();
+
+                if (FicExistingInventarioItem == null)
+                {
+                    await ficSQLiteConnection.InsertAsync(FicPaZt_inventarios_Item).ConfigureAwait(false);
+                }
+                else
+                {
+                    FicPaZt_inventarios_Item.Id = FicExistingInventarioItem.Id;
+                    await ficSQLiteConnection.UpdateAsync(FicPaZt_inventarios_Item).ConfigureAwait(false);
+                }
+            }
+        }
+
         public async Task FicMetInsertNewInventario(zt_inventarios FicPaZt_inventarios_Item)
         {
             //ficSQLiteConexion.Insert(ficPaZtInventarios);
@@ -93,23 +197,104 @@ namespace AppCocacolaNayMobiV2.Services.Inventarios
             }
         }
 
+        public async Task FicMetInsertNewInventarioConteos(zt_inventarios_conteos FicPaZt_inventarios_Item)
+        {
+            using (await ficMutex.LockAsync().ConfigureAwait(false))
+            {
+                var FicExistingInventarioItem = await ficSQLiteConnection.Table<zt_inventarios_conteos>()
+                        .Where(x => x.Id == FicPaZt_inventarios_Item.Id)
+                        .FirstOrDefaultAsync();
+
+                if (FicExistingInventarioItem == null)
+                {
+                    await ficSQLiteConnection.InsertAsync(FicPaZt_inventarios_Item).ConfigureAwait(false);
+                }
+                else
+                {
+                    FicPaZt_inventarios_Item.Id = FicExistingInventarioItem.Id;
+                    await ficSQLiteConnection.UpdateAsync(FicPaZt_inventarios_Item).ConfigureAwait(false);
+                }
+            }
+        }
+
+        public async Task FicMetInsertNewInventarioDet(zt_inventarios_det FicPaZt_inventarios_Item)
+        {
+            using (await ficMutex.LockAsync().ConfigureAwait(false))
+            {
+                var FicExistingInventarioItem = await ficSQLiteConnection.Table<zt_inventarios_det>()
+                        .Where(x => x.Id == FicPaZt_inventarios_Item.Id)
+                        .FirstOrDefaultAsync();
+
+                if (FicExistingInventarioItem == null)
+                {
+                    await ficSQLiteConnection.InsertAsync(FicPaZt_inventarios_Item).ConfigureAwait(false);
+                }
+                else
+                {
+                    FicPaZt_inventarios_Item.Id = FicExistingInventarioItem.Id;
+                    await ficSQLiteConnection.UpdateAsync(FicPaZt_inventarios_Item).ConfigureAwait(false);
+                }
+            }
+        }
+
+        public async Task FicMetInsertNewProductos(zt_cat_productos FicPaZt_inventarios_Item)
+        {
+            using (await ficMutex.LockAsync().ConfigureAwait(false))
+            {
+                var FicExistingInventarioItem = await ficSQLiteConnection.Table<zt_cat_productos>()
+                        .Where(x => x.Id == FicPaZt_inventarios_Item.Id)
+                        .FirstOrDefaultAsync();
+
+                if (FicExistingInventarioItem == null)
+                {
+                    await ficSQLiteConnection.InsertAsync(FicPaZt_inventarios_Item).ConfigureAwait(false);
+                }
+                else
+                {
+                    FicPaZt_inventarios_Item.Id = FicExistingInventarioItem.Id;
+                    await ficSQLiteConnection.UpdateAsync(FicPaZt_inventarios_Item).ConfigureAwait(false);
+                }
+            }
+        }
+
+        public async Task FicMetInsertNewUnidadMedidas(zt_cat_unidad_medidas FicPaZt_inventarios_Item)
+        {
+            using (await ficMutex.LockAsync().ConfigureAwait(false))
+            {
+                var FicExistingInventarioItem = await ficSQLiteConnection.Table<zt_cat_unidad_medidas>()
+                        .Where(x => x.Id == FicPaZt_inventarios_Item.Id)
+                        .FirstOrDefaultAsync();
+
+                if (FicExistingInventarioItem == null)
+                {
+                    await ficSQLiteConnection.InsertAsync(FicPaZt_inventarios_Item).ConfigureAwait(false);
+                }
+                else
+                {
+                    FicPaZt_inventarios_Item.Id = FicExistingInventarioItem.Id;
+                    await ficSQLiteConnection.UpdateAsync(FicPaZt_inventarios_Item).ConfigureAwait(false);
+                }
+            }
+        }
 
         public async Task FicMetRemoveInventario(zt_inventarios FicPaZt_inventarios_Item)
         {
             await ficSQLiteConnection.DeleteAsync(FicPaZt_inventarios_Item);
         }
 
-        //FIC: Obtener por Link, el registro maximo del inventario.
-        //public Task<List<zt_inventarios>> ficFcnGetListInventarioActual(string ficPaIdCedi, DateTime ficPaFecha)
-        //{
-        //    string ficStrFecha = ficPaFecha.Date.ToString("dd/MM/yyyy");
+        public async Task FicMetRemoveAllInventario()
+        {
+            await ficSQLiteConnection.DeleteAllAsync<zt_inventarios>();
+        }
 
-        //    //return ficSQLiteConexion.Table<zt_inventarios>().Where(x => x.IdCEDI == ficPaIdCedi && x.FechaReg == ficStrFecha).ToList();
+        public async Task FicMetRemoveAllInventarioConteos()
+        {
+            await ficSQLiteConnection.DeleteAllAsync<zt_inventarios_conteos>();
+        }
 
-        //    return ficSQLiteConnection.Table<zt_inventarios>().Where(x => x.IdCEDI == ficPaIdCedi).ToListAsync();
-        //}
-
-        #endregion
-
+        public async Task FicMetRemoveAllInventarioDet()
+        {
+            await ficSQLiteConnection.DeleteAllAsync<zt_inventarios_det>();
+        }
     }
 }

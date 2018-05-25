@@ -5,10 +5,10 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Web.Script.Services;
 
 namespace RESTInventarios
 {
-    // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de interfaz "IServiceInventarios" en el código y en el archivo de configuración a la vez.
     [ServiceContract]
     public interface IServiceInventarios
     {
@@ -20,13 +20,13 @@ namespace RESTInventarios
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "findinv/{id}", ResponseFormat = WebMessageFormat.Json)]
-        ZT_INVENTARIOS findInv(int id);
+        ZT_INVENTARIOS findInv(string id);
 
         [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate = "createinv",  ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
+        [WebInvoke(Method = "POST", UriTemplate = "createinv", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
         bool createInv(List<ZT_INVENTARIOS> inventario);
 
-        
+
 
         [OperationContract]
         [WebInvoke(Method = "PUT", UriTemplate = "editinv", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
@@ -44,7 +44,7 @@ namespace RESTInventarios
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "findalm/{id}", ResponseFormat = WebMessageFormat.Json)]
-        ZT_CAT_ALMACENES findAlm(int id);
+        ZT_CAT_ALMACENES findAlm(string id);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "createalm", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
@@ -66,7 +66,7 @@ namespace RESTInventarios
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "findced/{id}", ResponseFormat = WebMessageFormat.Json)]
-        ZT_CAT_CEDIS findCed(int id);
+        ZT_CAT_CEDIS findCed(string id);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "createced", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
@@ -88,7 +88,7 @@ namespace RESTInventarios
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "findpod/{id}", ResponseFormat = WebMessageFormat.Json)]
-        ZT_CAT_PRODUCTOS findPod(int id);
+        ZT_CAT_PRODUCTOS findPod(string id);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "createpod", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
@@ -110,7 +110,7 @@ namespace RESTInventarios
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "findunm/{id}", ResponseFormat = WebMessageFormat.Json)]
-        ZT_CAT_UNIDAD_MEDIDAS findUnm(int id);
+        ZT_CAT_UNIDAD_MEDIDAS findUnm(string id);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "createunm", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
@@ -132,7 +132,7 @@ namespace RESTInventarios
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "findinc/{id}", ResponseFormat = WebMessageFormat.Json)]
-        ZT_INVENTARIOS_CONTEOS findInC(int id);
+        ZT_INVENTARIOS_CONTEOS findInC(string id);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "createinc", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
@@ -154,7 +154,7 @@ namespace RESTInventarios
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "findind/{id}", ResponseFormat = WebMessageFormat.Json)]
-        ZT_INVENTARIOS_DET findInD(int id);
+        ZT_INVENTARIOS_DET findInD(string id);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "createind", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
@@ -170,4 +170,4 @@ namespace RESTInventarios
         #endregion  
 
     }//IServiceInventarios
-}//RESTWSINVENTARIOS
+}

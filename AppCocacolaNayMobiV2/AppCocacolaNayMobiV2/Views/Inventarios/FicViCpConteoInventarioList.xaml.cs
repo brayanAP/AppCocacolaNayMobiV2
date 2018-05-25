@@ -2,6 +2,10 @@
 using Xamarin.Forms.Xaml;
 //--
 using AppCocacolaNayMobiV2.ViewModels.Inventarios;
+using AppCocacolaNayMobiV2.Services;
+using AppCocacolaNayMobiV2.Models.Inventarios;
+using System.Collections.Generic;
+using AppCocacolaNayMobiV2.Services.Inventarios;
 
 namespace AppCocacolaNayMobiV2.Views.Inventarios
 {
@@ -17,12 +21,13 @@ namespace AppCocacolaNayMobiV2.Views.Inventarios
             FicParameter = ficPaParameter;
             //FIC: se manda llamar el metodo FicVmConteoinventario del Locator
             BindingContext = App.FicMetLocator.FicVmConteoInventarioList;
-
         }
 
-        protected override void OnAppearing()
+        
+
+        protected override async void OnAppearing()
         {
-            var viewModel = BindingContext as FicVmConteoInventarioList;
+           var viewModel = BindingContext as FicVmConteoInventarioList;
             if (viewModel != null) viewModel.OnAppearing(FicParameter);
         }
 

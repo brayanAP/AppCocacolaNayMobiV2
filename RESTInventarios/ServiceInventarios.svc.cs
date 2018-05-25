@@ -11,39 +11,59 @@ namespace RESTInventarios
     // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione ServiceInventarios.svc o ServiceInventarios.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class ServiceInventarios : IServiceInventarios
     {
-
         #region CREATE TABLAS
+        
         public bool createAlm(List<ZT_CAT_ALMACENES> inventario)
         {
             using (DBINVENTARIOSEntitiess dbe = new DBINVENTARIOSEntitiess())
             {
-                int i = 0;
-                foreach(ZT_CAT_ALMACENES tempinv in inventario)
+                bool existsAlm = false;
+                var lista = findAllAlm();
+
+                for (int i = 0; i < inventario.Count; i++)
                 {
-                    try
+                    
+                    for (int dx = 0; dx < lista.Count; dx++)
                     {
-                        ZT_CAT_ALMACENES inv =  tempinv;
-                        inv.Id = inventario[i].Id;
-                        inv.IdCEDI = inventario[i].IdCEDI;
-                        inv.IdAlmacen = inventario[i].IdAlmacen;
-                        inv.Almacen = inventario[i].Almacen;
-                        inv.FechaReg = inventario[i].FechaReg;
-                        inv.UsuarioReg = inventario[i].UsuarioReg;
-                        inv.FechaUltMod = inventario[i].FechaUltMod;
-                        inv.UsuarioMod = inventario[i].UsuarioMod;
-                        inv.Activo = inventario[i].Activo;
-                        inv.Borrado = inventario[i].Borrado;
-                        dbe.ZT_CAT_ALMACENES.Add(inv);
-                        dbe.SaveChanges();
-                        i++;
+                        if (lista[dx].IdAlmacen == inventario[i].IdAlmacen)
+                        {
+                            existsAlm = true;
+                        }
                     }
-                    catch
+
+                    if (!(existsAlm))
                     {
-                       
+                        try
+                        {
+                            ZT_CAT_ALMACENES inv = new ZT_CAT_ALMACENES
+                            {
+                                Id = inventario[i].Id,
+                                IdCEDI = inventario[i].IdCEDI,
+                                IdAlmacen = inventario[i].IdAlmacen,
+                                Almacen = inventario[i].Almacen,
+                                FechaReg = inventario[i].FechaReg,
+                                UsuarioReg = inventario[i].UsuarioReg,
+                                FechaUltMod = inventario[i].FechaUltMod,
+                                UsuarioMod = inventario[i].UsuarioMod,
+                                Activo = inventario[i].Activo,
+                                Borrado = inventario[i].Borrado
+                            };
+                            dbe.ZT_CAT_ALMACENES.Add(inv);
+                            dbe.SaveChanges();
+                            
+                        }
+                        catch
+                        {
+
+                        }
+                    }
+                    else
+                    {
+                        existsAlm = false;
                     }
                 }
                 return true;
-                
+
             };
         }//GUARDAR ALMACEN
 
@@ -51,30 +71,48 @@ namespace RESTInventarios
         {
             using (DBINVENTARIOSEntitiess dbe = new DBINVENTARIOSEntitiess())
             {
-                int i = 0;
+                bool existsCed = false;
+                var lista = findAllCed();
 
-                foreach(ZT_CAT_CEDIS temp in inventario)
+                for (int i = 0; i < inventario.Count; i++)
                 {
-                    try
-                    {
-                        ZT_CAT_CEDIS inv = temp;
-                        inv.Id = inventario[i].Id;
-                        inv.IdCEDI = inventario[i].IdCEDI;
-                        inv.CEDI = inventario[i].CEDI;
-                        inv.FechaReg = inventario[i].FechaReg;
-                        inv.UsuarioReg = inventario[i].UsuarioReg;
-                        inv.FechaUltMod = inventario[i].FechaUltMod;
-                        inv.UsuarioMod = inventario[i].UsuarioMod;
-                        inv.Activo = inventario[i].Activo;
-                        inv.Borrado = inventario[i].Borrado;
-                        dbe.ZT_CAT_CEDIS.Add(inv);
-                        dbe.SaveChanges();
-                        i++;
+                        for (int dx = 0; dx < lista.Count; dx++)
+                        {
+                            if (lista[dx].IdCEDI == inventario[i].IdCEDI)
+                            {
+                                existsCed = true;
+                            }
+                        }
 
+                        if (!(existsCed))
+                        {
+                            try
+                            {
+                                ZT_CAT_CEDIS inv = new ZT_CAT_CEDIS
+                                {
+                                    Id = inventario[i].Id,
+                                    IdCEDI = inventario[i].IdCEDI,
+                                    CEDI = inventario[i].CEDI,
+                                    FechaReg = inventario[i].FechaReg,
+                                    UsuarioReg = inventario[i].UsuarioReg,
+                                    FechaUltMod = inventario[i].FechaUltMod,
+                                    UsuarioMod = inventario[i].UsuarioMod,
+                                    Activo = inventario[i].Activo,
+                                    Borrado = inventario[i].Borrado
+                                };
+                                dbe.ZT_CAT_CEDIS.Add(inv);
+                                dbe.SaveChanges();
+                               
+
+                            }
+                            catch
+                            {
+
+                            }
                     }
-                    catch
+                    else
                     {
-                       
+                        existsCed = false;
                     }
                 }
                 return true;
@@ -85,39 +123,59 @@ namespace RESTInventarios
         {
             using (DBINVENTARIOSEntitiess dbe = new DBINVENTARIOSEntitiess())
             {
-                int i = 0;
-                foreach(ZT_INVENTARIOS_CONTEOS temp in inventario)
-                {
-                    try
-                    {
-                        ZT_INVENTARIOS_CONTEOS inv = temp;
-                        inv.Id = inventario[i].Id;
-                        inv.IdInventario = inventario[i].IdInventario;
-                        inv.SKU = inventario[i].SKU;
-                        inv.IdConteo = inventario[i].IdConteo;
-                        inv.IdUbicacion = inventario[i].IdUbicacion;
-                        inv.IdCEDI = inventario[i].IdCEDI;
-                        inv.IdAlmacen = inventario[i].IdAlmacen;
-                        inv.Almacen = inventario[i].Almacen;
-                        inv.Lote = inventario[i].Lote;
-                        inv.CodBarras = inventario[i].CodBarras;
-                        inv.Material = inventario[i].Material;
-                        inv.CantFisica = inventario[i].CantFisica;
-                        inv.IdUMedida = inventario[i].IdUMedida;
-                        inv.CantidadPZA= inventario[i].CantidadPZA;
-                        inv.FechaReg = inventario[i].FechaReg;
-                        inv.HoraReg = inventario[i].HoraReg;
-                        inv.FechaUltMod = inventario[i].FechaUltMod;
-                        inv.HoraUltMod = inventario[i].HoraUltMod;
-                        inv.UsuarioReg = inventario[i].UsuarioReg;
-                        dbe.ZT_INVENTARIOS_CONTEOS.Add(inv);
-                        dbe.SaveChanges();
-                        i++;
+                bool existsInC = false;
+                var lista = findAllInC();
 
-                    }
-                    catch
+                for (int i = 0; i < inventario.Count; i++)
+                {
+                    
+                    for (int dx = 0; dx < lista.Count; dx++)
                     {
-                        
+                        if (lista[dx].IdConteo == inventario[i].IdConteo)
+                        {
+                            existsInC = true;
+                        }
+                    }
+
+                    if (!(existsInC))
+                    {
+                        try
+                        {
+                            ZT_INVENTARIOS_CONTEOS inv = new ZT_INVENTARIOS_CONTEOS
+                            {
+                                Id = inventario[i].Id,
+                                IdInventario = inventario[i].IdInventario,
+                                SKU = inventario[i].SKU,
+                                IdConteo = inventario[i].IdConteo,
+                                IdUbicacion = inventario[i].IdUbicacion,
+                                IdCEDI = inventario[i].IdCEDI,
+                                IdAlmacen = inventario[i].IdAlmacen,
+                                Almacen = inventario[i].Almacen,
+                                Lote = inventario[i].Lote,
+                                CodBarras = inventario[i].CodBarras,
+                                Material = inventario[i].Material,
+                                CantFisica = inventario[i].CantFisica,
+                                IdUMedida = inventario[i].IdUMedida,
+                                CantidadPZA = inventario[i].CantidadPZA,
+                                FechaReg = inventario[i].FechaReg,
+                                HoraReg = inventario[i].HoraReg,
+                                FechaUltMod = inventario[i].FechaUltMod,
+                                HoraUltMod = inventario[i].HoraUltMod,
+                                UsuarioReg = inventario[i].UsuarioReg
+                            };
+                            dbe.ZT_INVENTARIOS_CONTEOS.Add(inv);
+                            dbe.SaveChanges();
+
+
+                        }
+                        catch
+                        {
+
+                        }
+                    }
+                    else
+                    {
+                        existsInC = false;
                     }
                 }
                 return true;
@@ -128,35 +186,54 @@ namespace RESTInventarios
         {
             using (DBINVENTARIOSEntitiess dbe = new DBINVENTARIOSEntitiess())
             {
-                int i = 0;
+                var lista = findAllInD();
+                bool existsInD = false;
 
-                foreach(ZT_INVENTARIOS_DET temp in inventario)
+                for (int i = 0; i < inventario.Count; i++)
                 {
-                    try
+                    for (int dx = 0; dx < lista.Count; dx++)
                     {
-                        ZT_INVENTARIOS_DET inv = temp;
-                        inv.Id = inventario[i].Id;
-                        inv.IdInventario = inventario[i].IdInventario;
-                        inv.SKU = inventario[i].SKU;
-                        inv.Material = inventario[i].Material;
-                        inv.CantTeorica = inventario[i].CantTeorica;
-                        inv.CantFisica = inventario[i].CantFisica;
-                        inv.Diferencia = inventario[i].Diferencia;
-                        inv.UMedida = inventario[i].UMedida;
-                        inv.FechaReg = inventario[i].FechaReg;
-                        inv.UsuarioReg = inventario[i].UsuarioReg;
-                        inv.FechaUltMod = inventario[i].FechaUltMod;
-                        inv.UsuarioMod = inventario[i].UsuarioMod;
-                        inv.Activo = inventario[i].Activo;
-                        inv.Borrado = inventario[i].Borrado;
-                        dbe.ZT_INVENTARIOS_DET.Add(inv);
-                        dbe.SaveChanges();
-                        i++;
-                        
+                        if (lista[dx].SKU == inventario[i].SKU)
+                        {
+                            return true;
+                        }
                     }
-                    catch
+
+                    if (!(existsInD))
                     {
-                       
+
+                        try
+                        {
+                            ZT_INVENTARIOS_DET inv = new ZT_INVENTARIOS_DET
+                            {
+                                Id = inventario[i].Id,
+                                IdInventario = inventario[i].IdInventario,
+                                SKU = inventario[i].SKU,
+                                Material = inventario[i].Material,
+                                CantTeorica = inventario[i].CantTeorica,
+                                CantFisica = inventario[i].CantFisica,
+                                Diferencia = inventario[i].Diferencia,
+                                UMedida = inventario[i].UMedida,
+                                FechaReg = inventario[i].FechaReg,
+                                UsuarioReg = inventario[i].UsuarioReg,
+                                FechaUltMod = inventario[i].FechaUltMod,
+                                UsuarioMod = inventario[i].UsuarioMod,
+                                Activo = inventario[i].Activo,
+                                Borrado = inventario[i].Borrado
+                            };
+                            dbe.ZT_INVENTARIOS_DET.Add(inv);
+                            dbe.SaveChanges();
+                            
+
+                        }
+                        catch
+                        {
+
+                        }
+                    }
+                    else
+                    {
+                        existsInD = false;
                     }
                 }
                 return true;
@@ -167,32 +244,51 @@ namespace RESTInventarios
         {
             using (DBINVENTARIOSEntitiess dbe = new DBINVENTARIOSEntitiess())
             {
-                int i = 0;
-                foreach (ZT_INVENTARIOS tempinv in inventario)
+                var lista = findAllInv();
+                bool existsInv = false;
+
+                for (int i = 0; i < inventario.Count; i++)
                 {
-                    try
+                    
+                    for (int dx = 0; dx < lista.Count; dx++)
                     {
-                        ZT_INVENTARIOS inv = tempinv;
-                        inv.Id = inventario[i].Id;
-                        inv.IdInventario = inventario[i].IdInventario;
-                        inv.IdCEDI = inventario[i].IdCEDI;
-                        inv.FechaReg = inventario[i].FechaReg;
-                        inv.Hora = inventario[i].Hora;
-                        inv.UsuarioReg = inventario[i].UsuarioReg;
-                        inv.FechaUltMod = inventario[i].FechaUltMod;
-                        inv.UsuarioMod = inventario[i].UsuarioMod;
-                        inv.Activo = inventario[i].Activo;
-                        inv.Borrado = inventario[i].Borrado;
-                        dbe.ZT_INVENTARIOS.Add(inv);
-                        dbe.SaveChanges();
-                        i++;
-                        
-                    }
-                    catch
-                    {
-                       
+                        if (lista[dx].IdInventario == inventario[i].IdInventario)
+                        {
+                            existsInv = true;
+                        }
                     }
 
+                    if (!(existsInv))
+                    {
+                        try
+                        {
+                            ZT_INVENTARIOS inv = new ZT_INVENTARIOS
+                            {
+                                Id = inventario[i].Id,
+                                IdInventario = inventario[i].IdInventario,
+                                IdCEDI = inventario[i].IdCEDI,
+                                FechaReg = inventario[i].FechaReg,
+                                Hora = inventario[i].Hora,
+                                UsuarioReg = inventario[i].UsuarioReg,
+                                FechaUltMod = inventario[i].FechaUltMod,
+                                UsuarioMod = inventario[i].UsuarioMod,
+                                Activo = inventario[i].Activo,
+                                Borrado = inventario[i].Borrado
+                            };
+                            dbe.ZT_INVENTARIOS.Add(inv);
+                            dbe.SaveChanges();
+                            
+
+                        }
+                        catch
+                        {
+                        }
+                    }
+                    else
+                    {
+                        existsInv = false;
+                    }
+                   
                 }
                 return true;
 
@@ -203,29 +299,49 @@ namespace RESTInventarios
         {
             using (DBINVENTARIOSEntitiess dbe = new DBINVENTARIOSEntitiess())
             {
-                int i = 0;
-                foreach(ZT_CAT_PRODUCTOS temp in inventario)
+                var lista = findAllPod();
+                bool existsPod = false;
+
+                for (int i = 0; i < inventario.Count; i++)
                 {
-                    try
+                    
+                    for (int dx = 0; dx < lista.Count; dx++)
                     {
-                        ZT_CAT_PRODUCTOS inv = temp;
-                        inv.Id = inventario[i].Id;
-                        inv.SKU = inventario[i].SKU;
-                        inv.CodigoBarras = inventario[i].CodigoBarras;
-                        inv.Material = inventario[i].Material;
-                        inv.FechaReg = inventario[i].FechaReg;
-                        inv.UsuarioReg = inventario[i].UsuarioReg;
-                        inv.FechaUltMod = inventario[i].FechaUltMod;
-                        inv.UsuarioMod = inventario[i].UsuarioMod;
-                        inv.Activo = inventario[i].Activo;
-                        inv.Borrado = inventario[i].Borrado;
-                        dbe.ZT_CAT_PRODUCTOS.Add(inv);
-                        dbe.SaveChanges();
-                        i++;
+                        if (lista[dx].SKU == inventario[i].SKU)
+                        {
+                            existsPod = true;
+                        }
                     }
-                    catch
+
+                    if (!(existsPod))
                     {
-                        
+                        try
+                        {
+                            ZT_CAT_PRODUCTOS inv = new ZT_CAT_PRODUCTOS
+                            {
+                                Id = inventario[i].Id,
+                                SKU = inventario[i].SKU,
+                                CodigoBarras = inventario[i].CodigoBarras,
+                                Material = inventario[i].Material,
+                                FechaReg = inventario[i].FechaReg,
+                                UsuarioReg = inventario[i].UsuarioReg,
+                                FechaUltMod = inventario[i].FechaUltMod,
+                                UsuarioMod = inventario[i].UsuarioMod,
+                                Activo = inventario[i].Activo,
+                                Borrado = inventario[i].Borrado
+                            };
+                            dbe.ZT_CAT_PRODUCTOS.Add(inv);
+                            dbe.SaveChanges();
+                           
+                        }
+                        catch
+                        {
+
+                        }
+                    }
+                    else
+                    {
+                        existsPod = false;
                     }
                 }
                 return true;
@@ -236,29 +352,44 @@ namespace RESTInventarios
         {
             using (DBINVENTARIOSEntitiess dbe = new DBINVENTARIOSEntitiess())
             {
-                int i = 0;
-                foreach(ZT_CAT_UNIDAD_MEDIDAS temp in inventario)
-                {
-                    try
+                var lista = findAllUnm();
+                bool existsUnm = false;
+
+                for (int i = 0; i < inventario.Count; i++)
+                { 
+                    for (int dx = 0; dx < lista.Count; dx++)
                     {
-                        ZT_CAT_UNIDAD_MEDIDAS inv = new ZT_CAT_UNIDAD_MEDIDAS();
-                        inv.Id = inventario[i].Id;
-                        inv.IdUMedida = inventario[i].IdUMedida;
-                        inv.UMedida = inventario[i].UMedida;
-                        inv.CantidadPZA = inventario[i].CantidadPZA;
-                        inv.FechaReg = inventario[i].FechaReg;
-                        inv.UsuarioReg = inventario[i].UsuarioReg;
-                        inv.FechaUltMod = inventario[i].FechaUltMod;
-                        inv.UsuarioMod = inventario[i].UsuarioMod;
-                        inv.Activo = inventario[i].Activo;
-                        inv.Borrado = inventario[i].Borrado;
-                        dbe.ZT_CAT_UNIDAD_MEDIDAS.Add(inv);
-                        dbe.SaveChanges();
-                        i++;
+                        if (lista[dx].IdUMedida == inventario[i].IdUMedida)
+                        {
+                            existsUnm = true;
+                        }
                     }
-                    catch
+
+                    if (!(existsUnm))
                     {
-                        
+                        try
+                        {
+                            ZT_CAT_UNIDAD_MEDIDAS inv = new ZT_CAT_UNIDAD_MEDIDAS();
+                            inv.Id = inventario[i].Id;
+                            inv.IdUMedida = inventario[i].IdUMedida;
+                            inv.UMedida = inventario[i].UMedida;
+                            inv.CantidadPZA = inventario[i].CantidadPZA;
+                            inv.FechaReg = inventario[i].FechaReg;
+                            inv.UsuarioReg = inventario[i].UsuarioReg;
+                            inv.FechaUltMod = inventario[i].FechaUltMod;
+                            inv.UsuarioMod = inventario[i].UsuarioMod;
+                            inv.Activo = inventario[i].Activo;
+                            inv.Borrado = inventario[i].Borrado;
+                            dbe.ZT_CAT_UNIDAD_MEDIDAS.Add(inv);
+                            dbe.SaveChanges();
+                        }
+                        catch
+                        {
+                        }
+                    }
+                    else
+                    {
+                        existsUnm = false;
                     }
                 }
                 return true;
@@ -667,93 +798,96 @@ namespace RESTInventarios
         #endregion
 
         #region SELECT ID TABLAS
-        public ZT_CAT_ALMACENES findAlm(int id)
+        public ZT_CAT_ALMACENES findAlm(string id)
         {
             using (DBINVENTARIOSEntitiess dbe = new DBINVENTARIOSEntitiess())
             {
+                int iid = Int32.Parse(id);
                 var query = (from p in dbe.ZT_CAT_ALMACENES
-                             where p.Id == id
+                             where p.Id == iid
                              select p);
                 var inventario = query.First();
                 return inventario;
             }
         }//TRAER ALMACEN UNICO
 
-        public ZT_CAT_CEDIS findCed(int id)
+        public ZT_CAT_CEDIS findCed(string id)
         {
+            int iid = Int32.Parse(id);
             using (DBINVENTARIOSEntitiess dbe = new DBINVENTARIOSEntitiess())
             {
                 var query = (from p in dbe.ZT_CAT_CEDIS
-                             where p.Id == id
+                             where p.Id == iid
                              select p);
                 var inventario = query.First();
                 return inventario;
             }
         }//TRAER CEDI UNICO
 
-        public ZT_INVENTARIOS_CONTEOS findInC(int id)
+        public ZT_INVENTARIOS_CONTEOS findInC(string id)
         {
-         
+            int iid = Int32.Parse(id);
             using (DBINVENTARIOSEntitiess dbe = new DBINVENTARIOSEntitiess())
             {
                 var query = (from p in dbe.ZT_INVENTARIOS_CONTEOS
-                             where p.Id == id
+                             where p.Id == iid
                              select p);
                 var inventario = query.First();
                 return inventario;
             }
         }//TRAER CONTEO UNICO
 
-        public ZT_INVENTARIOS_DET findInD(int id)
+        public ZT_INVENTARIOS_DET findInD(string id)
         {
-            
+            int iid = Int32.Parse(id);
             using (DBINVENTARIOSEntitiess dbe = new DBINVENTARIOSEntitiess())
             {
                 var query = (from p in dbe.ZT_INVENTARIOS_DET
-                             where p.Id == id
+                             where p.Id == iid
                              select p);
                 var inventario = query.First();
                 return inventario;
             }
         }//TRAER DETALLE UNICO
 
-        public ZT_INVENTARIOS findInv(int id)
+        public ZT_INVENTARIOS findInv(string id)
         {
+            int iid = Int32.Parse(id);
             using (DBINVENTARIOSEntitiess dbe = new DBINVENTARIOSEntitiess())
             {
                 var query = (from p in dbe.ZT_INVENTARIOS
-                             where p.Id == id
+                             where p.Id == iid
                              select p);
                 var inventario = query.First();
                 return inventario;
             }
         }//TRAER INVENTARIO UNICO
 
-        public ZT_CAT_PRODUCTOS findPod(int id)
+        public ZT_CAT_PRODUCTOS findPod(string id)
         {
-        
+            int iid = Int32.Parse(id);
             using (DBINVENTARIOSEntitiess dbe = new DBINVENTARIOSEntitiess())
             {
                 var query = (from p in dbe.ZT_CAT_PRODUCTOS
-                             where p.Id == id
+                             where p.Id == iid
                              select p);
                 var inventario = query.First();
                 return inventario;
             }
         }//TRAER PRODUCTO UNICO
 
-        public ZT_CAT_UNIDAD_MEDIDAS findUnm(int id)
+        public ZT_CAT_UNIDAD_MEDIDAS findUnm(string id)
         {
+            int iid = Int32.Parse(id);
             using (DBINVENTARIOSEntitiess dbe = new DBINVENTARIOSEntitiess())
             {
                 var query = (from p in dbe.ZT_CAT_UNIDAD_MEDIDAS
-                             where p.Id == id
+                             where p.Id == iid
                              select p);
                 var inventario = query.First();
                 return inventario;
             }
         }//TRAER UNIDAD MEDIDA UNICA
         #endregion
-
-    }//ServiceInventarios
-}//RESTWSINVENTARIOS
+    }
+}

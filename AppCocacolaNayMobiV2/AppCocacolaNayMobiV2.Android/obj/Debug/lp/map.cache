@@ -34,3 +34,5 @@ System.Resources.ResourceManager
 System.Diagnostics.Tools
 System.Reflection.Primitives
 System.Reflection.Extensions
+Newtonsoft.Json
+XLabs.Core
