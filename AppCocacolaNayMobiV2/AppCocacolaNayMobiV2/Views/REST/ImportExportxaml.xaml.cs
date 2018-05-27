@@ -258,12 +258,12 @@ namespace AppCocacolaNayMobiV2.Views.REST
         protected override async void OnAppearing()
         {
             /*
-            FicSrvConteoInventarioList a = new FicSrvConteoInventarioList();
+            SaveSqliteWS a = new SaveSqliteWS();
             await a.FicMetRemoveAllInventario();
             await DisplayAlert("BORRADO", "REGISTROS SQLITE BORRADOS CON EXITO", "OK");
             */
         }
-        
+
         public void OnToggled(object sender, ToggledEventArgs e)
         {
             if (e.Value) res[0] = true;
@@ -311,7 +311,6 @@ namespace AppCocacolaNayMobiV2.Views.REST
                 if (res[6]) importAlm();
             DisplayAlert("EXITO", "IMPORTADO", "OK");
         }//import
-
         private void ExportClicked(object sender, EventArgs e)
         {
             if (res[0]) exportInv();
@@ -323,7 +322,6 @@ namespace AppCocacolaNayMobiV2.Views.REST
             if (res[6]) exportAlm();
             DisplayAlert("EXITO", "EXPORTADO", "OK");
         }//export
-
 
     }
 }

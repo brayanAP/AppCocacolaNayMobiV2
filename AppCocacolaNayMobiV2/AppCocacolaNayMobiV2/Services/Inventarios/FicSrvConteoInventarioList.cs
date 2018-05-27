@@ -17,16 +17,7 @@ namespace AppCocacolaNayMobiV2.Services.Inventarios
         private SQLiteAsyncConnection ficSQLiteConnection;
 
         //FIC: Constructor
-        public FicSrvConteoInventarioList()
-        {
-            var ficDataBasePath = DependencyService.Get<IFicConfigSQLiteNETStd>().FicGetDatabasePath();
-            //var ficDataBasePath = "Data Source" = " + Server.MapPath(~/data/dbSQLite/";
-            //SQLiteConnection sqlite_conn = new SQLiteConnection("Data Source=" + Server.MapPath("~/db/test_database2.db") + ";Version=3;New=True;Compress=True;");
-            ficSQLiteConnection = new SQLiteAsyncConnection(ficDataBasePath);
-            //FIC: Se manda llamar funcion local para verificar
-            //si no existen las tablas crearlas de forma local en el dispositivo
-            FicLoMetCreateDataBaseAsync();
-        }
+        
 
         //FIC: Metodo para crear las tablas si no existen localmente en el dispositivo
         public async void FicLoMetCreateDataBaseAsync()
@@ -43,137 +34,15 @@ namespace AppCocacolaNayMobiV2.Services.Inventarios
             }
         }
 
-        public async Task<IList<zt_cat_almacenes>> FicMetGetListAlmacenes()
+        public FicSrvConteoInventarioList()
         {
-            var items = new List<zt_cat_almacenes>();
-            using (await ficMutex.LockAsync().ConfigureAwait(false))
-            {
-                items = await ficSQLiteConnection.Table<zt_cat_almacenes>().ToListAsync().ConfigureAwait(false);
-            }
-
-            return items;
-        }
-        public async Task FicMetRemoveAllAlmacenes()
-        {
-            await ficSQLiteConnection.DeleteAllAsync<zt_cat_almacenes>();
-        }
-
-        public async Task<IList<zt_cat_cedis>> FicMetGetListCedis()
-        {
-            var items = new List<zt_cat_cedis>();
-            using (await ficMutex.LockAsync().ConfigureAwait(false))
-            {
-                items = await ficSQLiteConnection.Table<zt_cat_cedis>().ToListAsync().ConfigureAwait(false);
-            }
-
-            return items;
-        }
-        public async Task FicMetRemoveAllCedis()
-        {
-            await ficSQLiteConnection.DeleteAllAsync<zt_cat_cedis>();
-        }
-
-        public async Task<IList<zt_inventarios>> FicMetGetListInventarios()
-        {
-            var items = new List<zt_inventarios>();
-            using (await ficMutex.LockAsync().ConfigureAwait(false))
-            {
-                items = await ficSQLiteConnection.Table<zt_inventarios>().ToListAsync().ConfigureAwait(false);
-            }
-
-            return items;
-        }
-        
-        public async Task<IList<zt_inventarios_conteos>> FicMetGetListInventariosConteos()
-        {
-            var items = new List<zt_inventarios_conteos>();
-            using (await ficMutex.LockAsync().ConfigureAwait(false))
-            {
-                items = await ficSQLiteConnection.Table<zt_inventarios_conteos>().ToListAsync().ConfigureAwait(false);
-            }
-
-            return items;
-        }
-
-        public async Task<IList<zt_inventarios_det>> FicMetGetListInventariosDet()
-        {
-            var items = new List<zt_inventarios_det>();
-            using (await ficMutex.LockAsync().ConfigureAwait(false))
-            {
-                items = await ficSQLiteConnection.Table<zt_inventarios_det>().ToListAsync().ConfigureAwait(false);
-            }
-
-            return items;
-        }
-
-        public async Task<IList<zt_cat_productos>> FicMetGetListProductos()
-        {
-            var items = new List<zt_cat_productos>();
-            using (await ficMutex.LockAsync().ConfigureAwait(false))
-            {
-                items = await ficSQLiteConnection.Table<zt_cat_productos>().ToListAsync().ConfigureAwait(false);
-            }
-
-            return items;
-        }
-        public async Task FicMetRemoveAllProductos()
-        {
-            await ficSQLiteConnection.DeleteAllAsync<zt_cat_productos>();
-        }
-
-        public async Task<IList<zt_cat_unidad_medidas>> FicMetGetListUnidadMedidas()
-        {
-            var items = new List<zt_cat_unidad_medidas>();
-            using (await ficMutex.LockAsync().ConfigureAwait(false))
-            {
-                items = await ficSQLiteConnection.Table<zt_cat_unidad_medidas>().ToListAsync().ConfigureAwait(false);
-            }
-
-            return items;
-        }
-        public async Task FicMetRemoveAllUnidadMedidas()
-        {
-            await ficSQLiteConnection.DeleteAllAsync<zt_cat_unidad_medidas>();
-        }
-
-        public async Task FicMetInsertNewAlmacenes(zt_cat_almacenes FicPaZt_inventarios_Item)
-        {
-            using (await ficMutex.LockAsync().ConfigureAwait(false))
-            {
-                var FicExistingInventarioItem = await ficSQLiteConnection.Table<zt_cat_almacenes>()
-                        .Where(x => x.Id == FicPaZt_inventarios_Item.Id)
-                        .FirstOrDefaultAsync();
-
-                if (FicExistingInventarioItem == null)
-                {
-                    await ficSQLiteConnection.InsertAsync(FicPaZt_inventarios_Item).ConfigureAwait(false);
-                }
-                else
-                {
-                    FicPaZt_inventarios_Item.Id = FicExistingInventarioItem.Id;
-                    await ficSQLiteConnection.UpdateAsync(FicPaZt_inventarios_Item).ConfigureAwait(false);
-                }
-            }
-        }
-
-        public async Task FicMetInsertNewCedis(zt_cat_cedis FicPaZt_inventarios_Item)
-        {
-            using (await ficMutex.LockAsync().ConfigureAwait(false))
-            {
-                var FicExistingInventarioItem = await ficSQLiteConnection.Table<zt_cat_cedis>()
-                        .Where(x => x.Id == FicPaZt_inventarios_Item.Id)
-                        .FirstOrDefaultAsync();
-
-                if (FicExistingInventarioItem == null)
-                {
-                    await ficSQLiteConnection.InsertAsync(FicPaZt_inventarios_Item).ConfigureAwait(false);
-                }
-                else
-                {
-                    FicPaZt_inventarios_Item.Id = FicExistingInventarioItem.Id;
-                    await ficSQLiteConnection.UpdateAsync(FicPaZt_inventarios_Item).ConfigureAwait(false);
-                }
-            }
+            var ficDataBasePath = DependencyService.Get<IFicConfigSQLiteNETStd>().FicGetDatabasePath();
+            //var ficDataBasePath = "Data Source" = " + Server.MapPath(~/data/dbSQLite/";
+            //SQLiteConnection sqlite_conn = new SQLiteConnection("Data Source=" + Server.MapPath("~/db/test_database2.db") + ";Version=3;New=True;Compress=True;");
+            ficSQLiteConnection = new SQLiteAsyncConnection(ficDataBasePath);
+            //FIC: Se manda llamar funcion local para verificar
+            //si no existen las tablas crearlas de forma local en el dispositivo
+            FicLoMetCreateDataBaseAsync();
         }
 
         public async Task FicMetInsertNewInventario(zt_inventarios FicPaZt_inventarios_Item)
@@ -197,104 +66,20 @@ namespace AppCocacolaNayMobiV2.Services.Inventarios
             }
         }
 
-        public async Task FicMetInsertNewInventarioConteos(zt_inventarios_conteos FicPaZt_inventarios_Item)
-        {
-            using (await ficMutex.LockAsync().ConfigureAwait(false))
-            {
-                var FicExistingInventarioItem = await ficSQLiteConnection.Table<zt_inventarios_conteos>()
-                        .Where(x => x.Id == FicPaZt_inventarios_Item.Id)
-                        .FirstOrDefaultAsync();
-
-                if (FicExistingInventarioItem == null)
-                {
-                    await ficSQLiteConnection.InsertAsync(FicPaZt_inventarios_Item).ConfigureAwait(false);
-                }
-                else
-                {
-                    FicPaZt_inventarios_Item.Id = FicExistingInventarioItem.Id;
-                    await ficSQLiteConnection.UpdateAsync(FicPaZt_inventarios_Item).ConfigureAwait(false);
-                }
-            }
-        }
-
-        public async Task FicMetInsertNewInventarioDet(zt_inventarios_det FicPaZt_inventarios_Item)
-        {
-            using (await ficMutex.LockAsync().ConfigureAwait(false))
-            {
-                var FicExistingInventarioItem = await ficSQLiteConnection.Table<zt_inventarios_det>()
-                        .Where(x => x.Id == FicPaZt_inventarios_Item.Id)
-                        .FirstOrDefaultAsync();
-
-                if (FicExistingInventarioItem == null)
-                {
-                    await ficSQLiteConnection.InsertAsync(FicPaZt_inventarios_Item).ConfigureAwait(false);
-                }
-                else
-                {
-                    FicPaZt_inventarios_Item.Id = FicExistingInventarioItem.Id;
-                    await ficSQLiteConnection.UpdateAsync(FicPaZt_inventarios_Item).ConfigureAwait(false);
-                }
-            }
-        }
-
-        public async Task FicMetInsertNewProductos(zt_cat_productos FicPaZt_inventarios_Item)
-        {
-            using (await ficMutex.LockAsync().ConfigureAwait(false))
-            {
-                var FicExistingInventarioItem = await ficSQLiteConnection.Table<zt_cat_productos>()
-                        .Where(x => x.Id == FicPaZt_inventarios_Item.Id)
-                        .FirstOrDefaultAsync();
-
-                if (FicExistingInventarioItem == null)
-                {
-                    await ficSQLiteConnection.InsertAsync(FicPaZt_inventarios_Item).ConfigureAwait(false);
-                }
-                else
-                {
-                    FicPaZt_inventarios_Item.Id = FicExistingInventarioItem.Id;
-                    await ficSQLiteConnection.UpdateAsync(FicPaZt_inventarios_Item).ConfigureAwait(false);
-                }
-            }
-        }
-
-        public async Task FicMetInsertNewUnidadMedidas(zt_cat_unidad_medidas FicPaZt_inventarios_Item)
-        {
-            using (await ficMutex.LockAsync().ConfigureAwait(false))
-            {
-                var FicExistingInventarioItem = await ficSQLiteConnection.Table<zt_cat_unidad_medidas>()
-                        .Where(x => x.Id == FicPaZt_inventarios_Item.Id)
-                        .FirstOrDefaultAsync();
-
-                if (FicExistingInventarioItem == null)
-                {
-                    await ficSQLiteConnection.InsertAsync(FicPaZt_inventarios_Item).ConfigureAwait(false);
-                }
-                else
-                {
-                    FicPaZt_inventarios_Item.Id = FicExistingInventarioItem.Id;
-                    await ficSQLiteConnection.UpdateAsync(FicPaZt_inventarios_Item).ConfigureAwait(false);
-                }
-            }
-        }
-
         public async Task FicMetRemoveInventario(zt_inventarios FicPaZt_inventarios_Item)
         {
             await ficSQLiteConnection.DeleteAsync(FicPaZt_inventarios_Item);
         }
 
-        public async Task FicMetRemoveAllInventario()
+        public async Task<IList<zt_inventarios>> FicMetGetListInventarios()
         {
-            await ficSQLiteConnection.DeleteAllAsync<zt_inventarios>();
-        }
+            var items = new List<zt_inventarios>();
+            using (await ficMutex.LockAsync().ConfigureAwait(false))
+            {
+                items = await ficSQLiteConnection.Table<zt_inventarios>().ToListAsync().ConfigureAwait(false);
+            }
 
-        public async Task FicMetRemoveAllInventarioConteos()
-        {
-            await ficSQLiteConnection.DeleteAllAsync<zt_inventarios_conteos>();
-        }
-
-        public async Task FicMetRemoveAllInventarioDet()
-        {
-            await ficSQLiteConnection.DeleteAllAsync<zt_inventarios_det>();
+            return items;
         }
     }
 }

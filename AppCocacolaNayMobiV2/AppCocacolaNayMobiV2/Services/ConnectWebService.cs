@@ -14,11 +14,12 @@ namespace AppCocacolaNayMobiV2.Services
     public class ConnectWebService
     {
         private HttpClient _Client = new HttpClient();
+        private const string URL = "http://localhost:54052/ServiceInventarios.svc/";
 
         public async Task<ObservableCollection<zt_inventarios>> getWebServiceInv()
         {
             /*URL A USAR*/
-            const string url = "http://localhost:54052/ServiceInventarios.svc/findallinv";
+            const string url = URL+"findallinv";
 
             /*PREGUNTA*/
             var content = await _Client.GetStringAsync(url);
@@ -33,7 +34,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task setWebServiceInv(List<zt_inventarios> item, bool isNewItem = false)
         {
             /*URL A USAR*/
-            const string url = "http://localhost:54052/ServiceInventarios.svc/createinv";
+            const string url = URL + "createinv";
             var uri = new Uri(string.Format(url, string.Empty));
 
             /*CREAMOS EN JSON*/
@@ -58,7 +59,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task<ObservableCollection<zt_cat_almacenes>> getWebServiceAlm()
         {
             /*URL A USAR*/
-            const string url = "http://localhost:54052/ServiceInventarios.svc/findallalm";
+            const string url = URL + "findallalm";
 
             /*PREGUNTA*/
             var content = await _Client.GetStringAsync(url);
@@ -73,7 +74,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task setWebServiceAlm(List<zt_cat_almacenes> item, bool isNewItem = false)
         {
             /*URL A USAR*/
-            const string url = "http://localhost:54052/ServiceInventarios.svc/createalm";
+            const string url = URL + "createalm";
             var uri = new Uri(string.Format(url, string.Empty));
 
             /*CREAMOS EN JSON*/
@@ -99,7 +100,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task<ObservableCollection<zt_cat_cedis>> getWebServiceCed()
         {
             /*URL A USAR*/
-            const string url = "http://localhost:54052/ServiceInventarios.svc/findallced";
+            const string url = URL + "findallced";
 
             /*PREGUNTA*/
             var content = await _Client.GetStringAsync(url);
@@ -114,7 +115,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task setWebServiceCed(List<zt_cat_cedis> item, bool isNewItem = false)
         {
             /*URL A USAR*/
-            const string url = "http://localhost:54052/ServiceInventarios.svc/createced";
+            const string url = URL + "createced";
             var uri = new Uri(string.Format(url, string.Empty));
 
             /*CREAMOS EN JSON*/
@@ -140,7 +141,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task<ObservableCollection<zt_cat_productos>> getWebServicePod()
         {
             /*URL A USAR*/
-            const string url = "http://localhost:54052/ServiceInventarios.svc/findallpod";
+            const string url = URL + "findallpod";
 
             /*PREGUNTA*/
             var content = await _Client.GetStringAsync(url);
@@ -155,7 +156,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task setWebServicePod(List<zt_cat_productos> item, bool isNewItem = false)
         {
             /*URL A USAR*/
-            const string url = "http://localhost:54052/ServiceInventarios.svc/createpod";
+            const string url = URL + "createpod";
             var uri = new Uri(string.Format(url, string.Empty));
 
             /*CREAMOS EN JSON*/
@@ -181,7 +182,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task<ObservableCollection<zt_cat_unidad_medidas>> getWebServiceUnm()
         {
             /*URL A USAR*/
-            const string url = "http://localhost:54052/ServiceInventarios.svc/findallunm";
+            const string url = URL + "findallunm";
 
             /*PREGUNTA*/
             var content = await _Client.GetStringAsync(url);
@@ -196,7 +197,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task setWebServiceUnm(List<zt_cat_unidad_medidas> item, bool isNewItem = false)
         {
             /*URL A USAR*/
-            const string url = "http://localhost:54052/ServiceInventarios.svc/createunm";
+            const string url = URL + "createunm";
             var uri = new Uri(string.Format(url, string.Empty));
 
             /*CREAMOS EN JSON*/
@@ -222,7 +223,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task<ObservableCollection<zt_inventarios_conteos>> getWebServiceInc()
         {
             /*URL A USAR*/
-            const string url = "http://localhost:54052/ServiceInventarios.svc/findallinc";
+            const string url = URL + "findallinc";
 
             /*PREGUNTA*/
             var content = await _Client.GetStringAsync(url);
@@ -237,7 +238,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task setWebServiceInc(List<zt_inventarios_conteos> item, bool isNewItem = false)
         {
             /*URL A USAR*/
-            const string url = "http://localhost:54052/ServiceInventarios.svc/createinc";
+            const string url = URL + "createinc";
             var uri = new Uri(string.Format(url, string.Empty));
 
             /*CREAMOS EN JSON*/
@@ -263,7 +264,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task<ObservableCollection<zt_inventarios_det>> getWebServiceInd()
         {
             /*URL A USAR*/
-            const string url = "http://localhost:54052/ServiceInventarios.svc/findallind";
+            const string url = URL + "findallind";
 
             /*PREGUNTA*/
             var content = await _Client.GetStringAsync(url);
@@ -278,7 +279,7 @@ namespace AppCocacolaNayMobiV2.Services
         public async Task setWebServiceInd(List<zt_inventarios_det> item, bool isNewItem = false)
         {
             /*URL A USAR*/
-            const string url = "http://localhost:54052/ServiceInventarios.svc/createind";
+            const string url = URL + "createind";
             var uri = new Uri(string.Format(url, string.Empty));
 
             /*CREAMOS EN JSON*/
@@ -304,7 +305,7 @@ namespace AppCocacolaNayMobiV2.Services
 
     public class ConnectXamarin
     {
-        FicSrvConteoInventarioList sqlite = new FicSrvConteoInventarioList();
+        private SaveSqliteWS sqlite = new SaveSqliteWS();
 
         public async Task<IList<zt_inventarios>> getXamarinInv()
         {

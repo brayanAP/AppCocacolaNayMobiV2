@@ -57,8 +57,8 @@
                     Grid.Row="8" Grid.Column="1"  />
                 <Switch Grid.Row="8" Grid.Column="2" IsToggled="{Binding SwZtCatAlmanacenes}"  Toggled="OnToggled7"></Switch>
 
-                <Button Text="Sinc. de Ida" Grid.Row="9" Grid.Column="1" Clicked="ExportClicked"></Button>
-                <Button Text="Sinc. de Vuelta"  Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="2" Clicked="ImportClicked"></Button>
+                <Button Text="Exportar" Grid.Row="9" Grid.Column="1" Clicked="ExportClicked"></Button>
+                <Button Text="Importar"  Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="2" Clicked="ImportClicked"></Button>
 
             </Grid>
 
