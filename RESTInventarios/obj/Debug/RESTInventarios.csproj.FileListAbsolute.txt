@@ -9,4 +9,3 @@ C:\AppCocacolaNayMobiV2\RESTInventarios\obj\Debug\RESTInventarios.csproj.CoreCom
 C:\AppCocacolaNayMobiV2\RESTInventarios\obj\Debug\RESTInventarios.csproj.CopyComplete
 C:\AppCocacolaNayMobiV2\RESTInventarios\obj\Debug\RESTInventarios.dll
 C:\AppCocacolaNayMobiV2\RESTInventarios\obj\Debug\RESTInventarios.pdb
-C:\AppCocacolaNayMobiV2\RESTInventarios\obj\Debug\RESTInventarios.csprojResolveAssemblyReference.cache
